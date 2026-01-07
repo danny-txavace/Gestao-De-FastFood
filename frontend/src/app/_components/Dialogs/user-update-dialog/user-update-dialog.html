@@ -1,0 +1,144 @@
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '25rem' }"
+  position="top"
+>
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center">
+      <h2>{{ 'DIALOGS.USERS.UPDATE.TITLE' | translate }}</h2>
+    </div>
+  </ng-template>
+  <span class="login_subtitle block mb-5">
+    <p>{{ 'DIALOGS.USERS.UPDATE.INSTRUCTION' | translate }}</p>
+  </span>
+  <form
+  [formGroup]="form"
+  class="my-1"
+  >
+    <div class="w-full flex flex-wrap justify-center items-center gap-3">
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-user" />
+          <input type="text" pInputText id="on_username"  autocomplete="off" formControlName="username" [ngClass]="{'invalid-input': isErrorUsername}"/>
+        </p-iconfield>
+          <label for="on_username">{{ 'DIALOGS.USERS.FIELDS.USERNAME' | translate }}</label>
+          @if (isErrorUsername) {
+            <small class="invalid-field">
+              {{ 'DIALOGS.USERS.FIELDS.REQUIRED' | translate }}
+            </small>
+          }
+      </p-floatlabel>
+      @if (isErrorUsername) {
+        <div class="mb-1"></div>
+      }
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-phone" />
+          <input type="tel" mask="00 000 0000" placeholder="8X XXX XXXX" pInputText id="on_phoneNumber"  autocomplete="off" formControlName="phoneNumber"/>
+        </p-iconfield>
+          <label for="on_phoneNumber">{{ 'DIALOGS.USERS.FIELDS.PHONE' | translate }}</label>
+      </p-floatlabel>
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-lock" />
+          <input type="{{ isNewPassVisible ? 'text' : 'password' }}" pInputText id="on_newPassword" autocomplete="off" formControlName="newPassword" [ngClass]="{'invalid-input': isNewPassError}"/>
+          <p-inputicon
+            class="password-icon"
+            [ngClass]="isNewPassVisible ? 'pi pi-eye-slash' : 'pi pi-eye'"
+            (click)="togglePassword('new')"
+          ></p-inputicon>
+        </p-iconfield>
+          <label for="on_newPassword">{{ 'DIALOGS.USERS.UPDATE.NEW_PASSWORD' | translate }}</label>
+          @if (isNewPassError) {
+            <small class="invalid-field">
+              {{ newPassErrorMsg }}
+            </small>
+          }
+      </p-floatlabel>
+      @if (isNewPassError) {
+        <div class="mb-1"></div>
+      }
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-lock" />
+          <input type="{{ isConfirmPassVisible ? 'text' : 'password' }}" pInputText id="on_confirmPassword" autocomplete="off" formControlName="confirmPassword" [ngClass]="{'invalid-input': isConfirmPassError}"/>
+          <p-inputicon
+            class="password-icon"
+            [ngClass]="isConfirmPassVisible ? 'pi pi-eye-slash' : 'pi pi-eye'"
+            (click)="togglePassword('confirm')"
+          ></p-inputicon>
+        </p-iconfield>
+          <label for="on_confirmPassword">{{ 'DIALOGS.USERS.UPDATE.CONFIRM_NEW_PASSWORD' | translate }}</label>
+          @if (isConfirmPassError) {
+            <small class="invalid-field">
+              {{ confirmPassErrorMsg }}
+            </small>
+          }
+      </p-floatlabel>
+      @if (isConfirmPassError) {
+        <div class="mb-1"></div>
+      }
+
+      <div class="w-full grid justify-between items-center">
+        <span style="color: var(--label-color);">{{ 'DIALOGS.USERS.UPDATE.ROLE.LABEL' | translate }}</span>
+        <span class="flex flex-wrap gap-4">
+          <div class="flex items-center">
+              <p-radiobutton size="small" name="roles" value="admin" inputId="admin" formControlName="roles"/>
+              <label for="admin" class="ml-2">{{ 'DIALOGS.USERS.UPDATE.ROLE.OPTIONS.ADMIN' | translate }}</label>
+          </div>
+
+          <div class="flex items-center">
+            <p-radiobutton size="small" name="roles" value="user" inputId="user" formControlName="roles"/>
+            <label for="user" class="ml-2">{{ 'DIALOGS.USERS.UPDATE.ROLE.OPTIONS.USER' | translate }}</label>
+          </div>
+        </span>
+      </div>
+
+      <div class="w-full grid justify-between items-center">
+        <span style="color: var(--label-color);">{{ 'DIALOGS.USERS.UPDATE.STATUS.LABEL' | translate }}</span>
+        <span class="flex flex-wrap gap-4">
+          <div class="flex items-center">
+              <p-radiobutton size="small" name="status" [value]="true" inputId="active" formControlName="status"/>
+              <label for="active" class="ml-2">{{ 'DIALOGS.USERS.UPDATE.STATUS.OPTIONS.ACTIVE' | translate }}</label>
+          </div>
+
+          <div class="flex items-center">
+            <p-radiobutton size="small" name="status" [value]="false" inputId="inactive" formControlName="status"/>
+            <label for="inactive" class="ml-2">{{ 'DIALOGS.USERS.UPDATE.STATUS.OPTIONS.INACTIVE' | translate }}</label>
+          </div>
+        </span>
+      </div>
+    </div>
+  </form>
+  <ng-template #footer>
+    <div class="mt-5 w-full flex justify-between items-center">
+      <button pRipple type="button"
+        class="btn_cancel"
+        (click)="visible = false"
+      >
+        {{ 'DIALOGS.USERS.ACTIONS.CANCEL' | translate }}
+      </button>
+
+      <span class="default_btn">
+        <button pRipple type="submit"
+          class="cursor-pointer"
+          [disabled]="showLoader"
+          (click)="onSubmit()"
+        >
+          @if (showLoader) {
+            <div class="loader">
+              <span class="small_loader"></span>
+            </div>
+          }
+          @else {
+            {{ 'DIALOGS.USERS.ACTIONS.CONFIRM' | translate }}
+          }
+        </button>
+      </span>
+    </div>
+  </ng-template>
+</p-dialog>

@@ -1,0 +1,37 @@
+<section class="flex items-center gap-2">
+  @if (params.data.status)
+  {
+    @if (showLoaderConfirm)
+    {
+      <div class="loader">
+        <span class="small_loader"></span>
+      </div>
+    }
+    @else
+    {
+      <span class="btn_only_icon">
+        <button pRipple type="button" (click)="onCancel()" [disabled]="params.data.cashName === 'opened' || params.data.cashName === 'closed'" class="disabled:cursor-not-allowed!">
+          <i class="pi pi-check"></i>
+        </button>
+      </span>
+    }
+  }
+  @else
+  {
+    @if (showLoaderCancel)
+    {
+      <div class="loader">
+        <span class="small_loader"></span>
+      </div>
+    }
+    @else
+    {
+      <button pRipple type="button"
+        (click)="onConfirm()"
+        class="btn_delete_icon"
+      >
+        <i class="pi pi-times"></i>
+      </button>
+    }
+  }
+</section>

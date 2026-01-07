@@ -1,0 +1,149 @@
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '25rem' }"
+  position="top"
+>
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center">
+      <h2>{{ 'DIALOGS.INGREDIENTS.UPDATE.TITLE' | translate }}</h2>
+    </div>
+  </ng-template>
+  <span class="login_subtitle block mb-5">{{ 'DIALOGS.INGREDIENTS.UPDATE.INSTRUCTION' | translate }}</span>
+  <form
+    [formGroup]="form"
+    class="my-1"
+  >
+    <div class="w-full flex flex-wrap justify-center items-center gap-3">
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-box" />
+          <input type="text" pInputText id="on_itemName"  autocomplete="off" formControlName="itemName" [ngClass]="{'invalid-input': isErrorItemName}"/>
+        </p-iconfield>
+        <label for="on_itemName">{{ 'DIALOGS.INGREDIENTS.FIELDS.ITEM_NAME.LABEL' | translate }}</label>
+        @if (isErrorItemName) {
+          <small class="invalid-field">
+            {{ 'DIALOGS.INGREDIENTS.FIELDS.ITEM_NAME.REQUIRED' | translate }}
+          </small>
+        }
+      </p-floatlabel>
+      @if (isErrorItemName) {
+        <div class="mb-1"></div>
+      }
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-barcode" />
+          <input type="text"
+          pInputText id="on_batchNumber"  autocomplete="off" formControlName="batchNumber"/>
+        </p-iconfield>
+        <label for="on_batchNumber">{{ 'DIALOGS.INGREDIENTS.FIELDS.BATCH_NUMBER' | translate }}</label>
+      </p-floatlabel>
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-sitemap" />
+          <p-inputnumber
+          [min]="0"
+          inputId="on_packageSize"
+          autocomplete="off"
+          class="w-full"
+          formControlName="packageSize"/>
+        </p-iconfield>
+        <label for="on_packageSize">{{ 'DIALOGS.INGREDIENTS.FIELDS.PACKAGE_SIZE' | translate }}</label>
+      </p-floatlabel>
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-select
+            formControlName="unitOfMeasure" inputId="on_unitOfMeasure"
+            [options]="unitOptions"
+            class="w-full"
+          />
+        </p-iconfield>
+          <label for="on_unitOfMeasure">{{ 'DIALOGS.INGREDIENTS.FIELDS.UNIT_OF_MEASURE' | translate }}</label>
+      </p-floatlabel>
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-sitemap" />
+          <p-inputnumber
+          [min]="0"
+          inputId="on_quantity"
+          autocomplete="off"
+          class="w-full"
+          formControlName="quantity"/>
+        </p-iconfield>
+        <label for="on_quantity">{{ 'DIALOGS.INGREDIENTS.FIELDS.QUANTITY' | translate }}</label>
+      </p-floatlabel>
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-money-bill" />
+          <p-inputnumber
+          [min]="0"
+          inputId="on_unitCostPrice"
+          autocomplete="off"
+          class="w-full"
+          formControlName="unitCostPrice"/>
+        </p-iconfield>
+        <label for="on_unitCostPrice">{{ 'DIALOGS.INGREDIENTS.FIELDS.UNIT_COST_PRICE' | translate }}</label>
+      </p-floatlabel>
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-datepicker
+          formControlName="expirationAt"
+          dateFormat="dd/mm/yy"
+          inputId="on_expirAt" showIcon iconDisplay="input"
+          class="w-full"
+          appendTo="div"
+        />
+        <label for="on_expirAt">{{ 'DIALOGS.INGREDIENTS.FIELDS.EXPIRATION_AT' | translate }}</label>
+      </p-floatlabel>
+
+      <div class="w-full grid justify-between items-center">
+        <span
+          style="color: var(--label-color);"
+        >{{ 'DIALOGS.INGREDIENTS.UPDATE.STATUS.LABEL' | translate }}</span>
+        <span class="flex flex-wrap gap-4">
+          <div class="flex items-center">
+              <p-radiobutton size="small" name="status" [value]="true" inputId="active" formControlName="status"/>
+              <label for="active" class="ml-2">{{ 'DIALOGS.INGREDIENTS.UPDATE.STATUS.OPTIONS.ACTIVE' | translate }}</label>
+          </div>
+
+          <div class="flex items-center">
+            <p-radiobutton size="small" name="status" [value]="false" inputId="inactive" formControlName="status"/>
+            <label for="inactive" class="ml-2">{{ 'DIALOGS.INGREDIENTS.UPDATE.STATUS.OPTIONS.INACTIVE' | translate }}</label>
+          </div>
+        </span>
+      </div>
+    </div>
+  </form>
+  <ng-template #footer>
+    <div class="mt-2 w-full flex justify-between items-center">
+      <button pRipple type="button"
+        class="btn_cancel"
+        (click)="visible = false"
+      >
+        {{ 'DIALOGS.INGREDIENTS.ACTIONS.CANCEL' | translate }}
+      </button>
+
+      <span class="default_btn">
+        <button pRipple type="submit"
+          class="cursor-pointer"
+          [disabled]="showLoader"
+          (click)="onSubmit()"
+        >
+          @if (showLoader) {
+            <div class="loader">
+              <span class="small_loader"></span>
+            </div>
+          }
+          @else {
+            {{ 'DIALOGS.INGREDIENTS.ACTIONS.CONFIRM' | translate }}
+          }
+        </button>
+      </span>
+    </div>
+  </ng-template>
+</p-dialog>

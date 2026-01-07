@@ -1,0 +1,638 @@
+{
+  "APP_NAME": "Tio Laice Manager",
+
+
+
+  "LOADER": "Loading data, please wait",
+
+
+
+  "FOOTER": "© 2025, Tio Laice Manager · Powered by Ramadan · All rights reserved.",
+
+
+
+  "NOT_FOUND":
+  {
+    "TITLE": "Page Not Found",
+    "MESSAGE": "Sorry, the page you're looking for is not available. It may have been moved or removed."
+  },
+
+
+
+  "LOGIN":
+  {
+    "TITLE": "Welcome Back!",
+    "SUBTITLE": "Please enter your credentials to access your account.",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "SIGN_IN": "Sign In",
+    "TOOLTIP":
+    {
+      "SHOW_PASSWORD": "Show Password",
+      "HIDE_PASSWORD": "Hide Password"
+    },
+    "ERROR":
+    {
+      "USERNAME": "Enter your username",
+      "PASSWORD": "Enter your password"
+    }
+  },
+
+
+
+  "MANAGEMENT_NAVBAR":
+  {
+    "DASHBOARD": "Dashboard",
+    "POS": "POS",
+    "POINT_OF_SALE": "Point of Sale",
+    "CASH_REGISTER": "Cash Register",
+    "ORDERS_LIST": "Orders",
+    "ORDERS_LISTS": "Orders",
+    "REPORT": "Report",
+    "MENU": "Menu",
+    "INGREDIENTS": "Ingredients",
+    "SYSTEM_USERS": "System Users",
+    "THEME":
+    {
+      "TITLE": "Appearance",
+      "DARK": "Dark Mode",
+      "LIGHT": "Light Mode"
+    },
+    "LANGUAGE":
+    {
+      "TITLE": "Language",
+      "ABBREVIATION": "EN",
+      "FULL_NAME": "English",
+      "OPTIONS":
+      {
+        "EN": "English",
+        "ES": "Spanish",
+        "PT": "Portuguese",
+        "ZH": "Chinese"
+      }
+    },
+    "SIGN_OUT": "Sign Out"
+  },
+
+
+
+  "DASHBOARD":
+  {
+    "INFO_GREETING": "Welcome back, boss! Time to shine.",
+    "INFO2_GREETING": "Turn every opportunity into profit...🔥"
+  },
+
+
+
+  "POS":
+  {
+    "CLOSED":
+    {
+      "SYSTEM_ADMINISTRATOR": "System Administrator",
+      "HELLO": "Hello",
+      "GLAD_TO_SEE_YOU_BACK": "Great to see you back...",
+      "LETS_OPEN_CASH_REGISTER": "Let's open the till and start the day strong",
+      "CASH_REGISTER_CLOSED": "TILL CLOSED",
+      "CASH_REGISTER_NOT_OPENED": "The till for today has not been opened yet.",
+      "TO_START_SALES": "To start selling, click the button below.",
+      "OPEN_CASH_REGISTER_NOW": "OPEN TILL NOW",
+      "USER_CASHIER": "Cashier",
+      "USER_CASH_REGISTER_OPEN": "Till Open",
+      "USER_CASH_REGISTER_CLOSED": "Till Closed",
+      "DATE_FORMAT_LONG": "EEEE, d MMMM yyyy"
+    },
+    "NEW_ORDER":
+    {
+      "TITLE": "New Order",
+      "TOTAL_QUANTITY": "Total Qty.",
+      "TOTAL_TO_PAY": "Total to Pay",
+      "PAY_NOW": "Pay Now",
+      "CANCEL": "Cancel",
+      "PLACE_ORDER": "Place Order",
+      "ORDER_NUMBER": "ORDER#",
+      "NO_ITEMS_IN_CART": "No items in cart",
+      "QUANTITY": "Quantity",
+      "AVAILABLE": "Available",
+      "UNAVAILABLE": "Unavailable",
+      "ADD_TO_CART": "Add to Cart"
+    },
+    "ORDERS_LIST":
+    {
+      "TITLE": "Orders List"
+    },
+    "CASH_MOVEMENTS":
+    {
+      "TITLE": "Cash Movements",
+      "TODAY_SUMMARY": "Here's what we have for today:",
+      "INITIAL_BALANCE": "Opening Balance",
+      "TOTAL_INCOMES": "Total Inflows",
+      "TOTAL_EXPENSES": "Total Outflows",
+      "EXPECTED_TOTAL": "Expected Total",
+      "CLOSE_CASH_REGISTER": "Close Till",
+      "CASH_REINFORCEMENT": "Cash Reinforcement",
+      "CASH_WITHDRAWAL": "Cash Withdrawal"
+    }
+  },
+
+
+
+  "INGREDIENTS":
+  {
+    "TOTAL_ITEMS": "Active Items",
+    "TOTAL_ACTIVE_QTY": "Available Qty",
+    "TOTAL_INACTIVE_QTY": "Inactive Items",
+    "NEAR_EXPIRY": "Near Expiry",
+    "EXPIRED": "Expired",
+    "ADD_NEW_INGREDIENT": "New Ingredient"
+  },
+
+
+
+  "PRODUCTS":
+  {
+    "ADD_NEW_ITEM": "New Item"
+  },
+
+
+
+  "CASH_REGISTER":
+  {
+    "TODAY_SUMMARY": "Here's what we have for today:",
+    "INITIAL_BALANCE": "Opening Balance",
+    "TOTAL_INCOMES": "Total Inflows",
+    "TOTAL_EXPENSES": "Total Outflows",
+    "EXPECTED_TOTAL": "Expected Total",
+    "OPEN_CASH_REGISTER": "Open Till",
+    "CLOSE_CASH_REGISTER": "Close Till",
+    "CASH_REINFORCEMENT": "Cash Reinforcement",
+    "CASH_WITHDRAWAL": "Cash Withdrawal"
+  },
+
+
+
+  "REPORT":
+  {
+    "YESTERDAY": "Yesterday",
+    "TODAY": "Today",
+    "DATE_RANGE": "Select Period",
+    "OPENING_BALANCE": "Opening Balance",
+    "INFLOWS": "Inflows",
+    "OUTFLOWS": "Outflows",
+    "PAYMENT_METHODS": "Payment Methods",
+    "CLOSING_BALANCE": "Closing Balance",
+    "NUMBER_OF_SALES": "Number of Sales",
+    "EXPECTED_BALANCE": "Expected Balance",
+    "AVERAGE_TICKET": "Average Ticket",
+    "SALES_PER_HOUR": "Sales Performance",
+    "CASH_MOVEMENTS": "Cash Movements",
+    "SALES_BREAKDOWN": "Sales Breakdown",
+    "RECENT_SALES": "Recent Sales",
+    "LATEST_TRANSACTIONS": "latest transactions",
+    "NO_SALES": "No recent sales found",
+    "CASH": "Cash"
+  },
+
+
+
+  "SYSTEM_USERS":
+  {
+    "ADD_NEW_USER": "New User"
+  },
+
+
+
+  "COMMON":
+  {
+    "SEARCH": "Search",
+    "UNIT_OF_MEASURE": {
+      "UNIT": "Unit",
+      "BOTTLE": "Bottle",
+      "DOZEN": "Dozen (dz)",
+      "GRAM": "Gram (g)",
+      "KILOGRAM": "Kilogram (kg)",
+      "MILLIGRAM": "Milligram (mg)",
+      "MILLILITER": "Millilitre (ml)",
+      "LITER": "Litre (L)",
+      "OTHER": "Other"
+    },
+    "CARD":
+    {
+      "COMPARED_TO_YESTERDAY": "vs yesterday",
+      "COMPARED_TO_DAY_BEFORE_YESTERDAY": "vs 2 days ago",
+      "COMPARED_TO_LAST_MONTH": "vs last month",
+      "COMPARED_TO_LAST_WEEK": "vs last week",
+      "COMPARED_TO_WEEK_BEFORE_LAST": "vs 2 weeks ago",
+      "COMPARED_TO_MONTH_BEFORE_LAST": "vs 2 months ago",
+      "COMPARED_TO_LAST": "vs previous",
+      "LAST_UPDATED": "las updated"
+    },
+    "TABLE":
+    {
+      "NO_ROWS_TO_SHOWS": "No records to display...",
+      "SHOWING": "Showing",
+      "TO": "to",
+      "OF": "of",
+      "ENTRIES": "records"
+    },
+    "CALENDAR":
+    {
+      "TODAY": "Today",
+      "CLEAR": "Clear",
+      "DATE_FORMAT": "dd/mm/yy",
+      "WEEK_HEADER": "WK",
+      "DAY_NAMES":
+      {
+        "FULL":
+        {
+          "SUNDAY": "Sunday",
+          "MONDAY": "Monday",
+          "TUESDAY": "Tuesday",
+          "WEDNESDAY": "Wednesday",
+          "THURSDAY": "Thursday",
+          "FRIDAY": "Friday",
+          "SATURDAY": "Saturday"
+        },
+        "SHORT":
+        {
+          "SUNDAY": "Sun",
+          "MONDAY": "Mon",
+          "TUESDAY": "Tue",
+          "WEDNESDAY": "Wed",
+          "THURSDAY": "Thu",
+          "FRIDAY": "Fri",
+          "SATURDAY": "Sat"
+        },
+        "MIN":
+        {
+          "SUNDAY": "Su",
+          "MONDAY": "Mo",
+          "TUESDAY": "Tu",
+          "WEDNESDAY": "We",
+          "THURSDAY": "Th",
+          "FRIDAY": "Fr",
+          "SATURDAY": "Sa"
+        }
+      },
+      "MONTH_NAMES":
+      {
+        "FULL":
+        {
+          "JANUARY": "January",
+          "FEBRUARY": "February",
+          "MARCH": "March",
+          "APRIL": "April",
+          "MAY": "May",
+          "JUNE": "June",
+          "JULY": "July",
+          "AUGUST": "August",
+          "SEPTEMBER": "September",
+          "OCTOBER": "October",
+          "NOVEMBER": "November",
+          "DECEMBER": "December"
+        },
+        "SHORT":
+        {
+          "JANUARY": "Jan",
+          "FEBRUARY": "Feb",
+          "MARCH": "Mar",
+          "APRIL": "Apr",
+          "MAY": "May",
+          "JUNE": "Jun",
+          "JULY": "Jul",
+          "AUGUST": "Aug",
+          "SEPTEMBER": "Sep",
+          "OCTOBER": "Oct",
+          "NOVEMBER": "Nov",
+          "DECEMBER": "Dec"
+        }
+      }
+    },
+    "CHART":
+    {
+      "PROFIT_LOSS": "Profit & Loss",
+      "REVENUE": "Revenue",
+      "EXPENSE": "Expense",
+      "AREA":
+      {
+        "REVENUE_EXPENSE": "Revenue vs Expense",
+        "FILE_NAME": "Chart-RevenueVsExpense",
+        "DOWNLOAD": "Download",
+        "RESET": "Reset"
+      }
+    }
+  },
+
+
+
+  "DIALOGS":
+  {
+    "OPERATOR": "Operator",
+    "INSTRUCTION": "Please complete the form to close the till.",
+    "CLOSE_CASH_REGISTER": "Till Closure",
+    "INITIAL_BALANCE": "Opening Balance",
+    "TOTAL_INCOMES": "Total Income",
+    "TOTAL_EXPENSES": "Total Expenses",
+    "EXPECTED_TOTAL": "Expected Total",
+    "USER_SELECTION": "Select User",
+    "CASH_AMOUNT": "Counted Amount",
+    "ACTIONS":
+    {
+      "CANCEL": "Cancel",
+      "CONFIRM": "Confirm"
+    },
+    "CASH_ADJUSTMENTS":
+    {
+      "REINFORCEMENT":
+      {
+        "TITLE": "Cash Reinforcement",
+        "INFO": "Add cash to the till to ensure sufficient float or available balance.",
+        "AMOUNT": "Amount to Add",
+        "DESCRIPTION":
+        {
+          "LABEL": "Description",
+          "PLACEHOLDER": "Optional: explain the purpose of the reinforcement"
+        }
+      },
+      "WITHDRAWAL":
+      {
+        "TITLE": "Cash Withdrawal",
+        "INFO": "Remove cash from the till for security, bank deposit, or to cover immediate expenses.",
+        "AMOUNT": "Amount to Withdraw",
+        "DESCRIPTION":
+        {
+          "LABEL": "Description",
+          "PLACEHOLDER": "Optional: explain the purpose of the withdrawal"
+        }
+      }
+    },
+    "OPEN_CASH":
+    {
+      "TITLE": "Open Till",
+      "INFO": "Enter the opening amount to start the shift.",
+      "AMOUNT": "Opening Amount"
+    },
+    "DELETE":
+    {
+      "TITLE": "Delete",
+      "INFO_0": "Are you sure you want to delete this item?",
+      "INFO_1": "This action is permanent and cannot be undone.",
+      "INFO_2": "If you are certain, click 'Delete'.",
+      "ACTIONS":
+      {
+        "CANCEL": "Cancel",
+        "CONFIRM": "Delete"
+      }
+    },
+    "INGREDIENTS":
+    {
+      "TITLE": "INGREDIENTS",
+      "SELECT_INGREDIENT": "Select an Ingredient",
+      "ADD_NEW":
+      {
+        "BTN": "New Ingredient",
+        "TITLE": "Add New Ingredient",
+        "INSTRUCTION": "Complete the form to register a new ingredient."
+      },
+      "UPDATE":
+      {
+        "TITLE": "Update Ingredient",
+        "INSTRUCTION": "Complete the form to update the ingredient details.",
+        "STATUS":
+        {
+          "LABEL": "Status",
+          "OPTIONS":
+          {
+            "ACTIVE": "Active",
+            "INACTIVE": "Inactive"
+          }
+        }
+      },
+      "FIELDS":
+      {
+        "ITEM_NAME":
+        {
+          "LABEL": "Item Name",
+          "REQUIRED": "Item name is required"
+        },
+        "BATCH_NUMBER": "Batch Number",
+        "PACKAGE_SIZE": "Package Size",
+        "UNIT_OF_MEASURE": "Unit of Measure",
+        "QUANTITY": "Quantity",
+        "UNIT_COST_PRICE": "Unit Cost Price",
+        "EXPIRATION_AT": "Expiry Date"
+      },
+      "ACTIONS":
+      {
+        "CANCEL": "Cancel",
+        "CONFIRM": "Save"
+      }
+    },
+    "CUSTOMER":
+    {
+      "TITLE": "Add New Customer",
+      "INFO": "Enter the customer details. If no name is provided, the customer will be recorded as 'WALK-IN CUSTOMER'.",
+      "FIELDS": {
+        "NAME": "Full Name",
+        "PHONE": "Phone Number"
+      }
+    },
+    "PAYMENT":
+    {
+      "TITLE": "PAYMENT",
+      "CUSTOMER": "WALK-IN CUSTOMER",
+      "INFO": "Please check the total and complete the payment 😊",
+      "SELECT_METHOD": "Select payment method(s)",
+      "AMOUNT": "Amount to Pay",
+      "TOTAL": "Total",
+      "PAID": "Paid",
+      "DUE": "Remaining",
+      "CHANGE": "Change",
+      "FOOTER": "Secure and protected transaction!"
+    },
+    "PRODUCTS":
+    {
+      "ADD_NEW":
+      {
+        "TITLE": "Add New Product",
+        "INSTRUCTION": "Register a new menu item."
+      },
+      "UPDATE":
+      {
+        "TITLE": "Update Product",
+        "INSTRUCTION": "Update the menu item information",
+        "STATUS":
+        {
+          "LABEL": "Status",
+          "OPTIONS":
+          {
+            "ACTIVE": "Active",
+            "INACTIVE": "Inactive"
+          }
+        }
+      },
+      "FIELDS":
+      {
+        "ITEM_NAME":
+        {
+          "LABEL": "Item Name",
+          "REQUIRED": "Item name is required"
+        },
+        "PRICE": "Price",
+        "CATEGORY": "Category"
+      },
+      "ACTIONS":
+      {
+        "CANCEL": "Cancel",
+        "CONFIRM": "Save"
+      }
+    },
+    "USERS":
+    {
+      "ADD_NEW":
+      {
+        "TITLE": "Add New User",
+        "INSTRUCTION": "Complete the form to register a new user.<br>The initial password will be <strong>123456</strong>. They can (and should) change it on first login."
+      },
+      "UPDATE":
+      {
+        "TITLE": "Update User",
+        "INSTRUCTION": "Make the required changes and save",
+        "STATUS":
+        {
+          "LABEL": "Status",
+          "OPTIONS":
+          {
+            "ACTIVE": "Active",
+            "INACTIVE": "Inactive"
+          }
+        },
+        "NEW_PASSWORD": "New Password",
+        "NEW_PASSWORD_TOO_SHORT": "The new password must be at least 6 characters",
+        "CONFIRM_NEW_PASSWORD": "Confirm New Password",
+        "CONFIRM_PASSWORD_TOO_SHORT": "Confirmation must be at least 6 characters",
+        "PASSWORDS_DO_NOT_MATCH": "The passwords do not match",
+        "ROLE":
+        {
+          "LABEL": "Role",
+          "OPTIONS":
+          {
+            "ADMIN": "Manager",
+            "USER": "Operator"
+          }
+        }
+      },
+      "FIELDS":
+      {
+        "USERNAME": "Username",
+        "REQUIRED": "Username is required",
+        "PHONE": "Phone Number"
+      },
+      "ACTIONS":
+      {
+        "CANCEL": "Cancel",
+        "CONFIRM": "Save"
+      }
+    }
+  },
+
+
+
+  "TABLE_HEADER": {
+    "ACTIONS": "Actions",
+    "TOTAL": "Total",
+    "TOTALS": "Totals",
+    "OPERATOR": "Operator",
+    "ITEM_NAME": "Item Name",
+    "QTY": "Qty",
+    "TOTAL_AMOUNT": "Total (MT)",
+    "PAID_AMOUNT": "Paid (MT)",
+    "CHANGE": "Change (MT)",
+    "AMOUNT_MT": "Amount (MT)",
+    "DESCRIPTION": "Description",
+    "LAST_UPDATE": "Updated At",
+    "CREATED_AT": "Created At",
+    "DATE_TIME": "Date & Time",
+    "CUSTOMER_NAME": "Customer Name",
+    "CUSTOMER_PHONE": "Mobile",
+    "BATCH_NUMBER": "Batch No.",
+    "PACKAGE_SIZE": "Pack Size",
+    "UNIT_OF_MEASURE": "Unit",
+    "EXPIRATION_AT": "Expires On",
+    "UNIT_PRICE": "Unit Price (MT)",
+    "TOTAL_PRICE": "Total Price (MT)",
+    "IMAGE": "Image",
+    "PRICE": "Price (MT)",
+    "CATEGORY": "Category",
+    "TOTAL_OPEN": "Opening Total (MT)",
+    "TOTAL_CLOSED": "Closing Total (MT)",
+    "OPENED_AT": "Opened At",
+    "CLOSED_AT": "Closed At",
+    "USERNAME": "User",
+    "ROLE": "Role",
+    "TYPE": {
+      "TITLE": "Type",
+      "OPTIONS": {
+        "OPENED": "Opened",
+        "CLOSED": "Closed",
+        "REINFORCEMENT": "Cash Top-up",
+        "WITHDRAWAL": "Cash Withdrawal"
+      }
+    },
+    "STATUS": {
+      "TITLE": "Status",
+      "OPTIONS": {
+        "CONFIRMED": "Confirmed",
+        "CANCELLED": "Cancelled",
+        "PENDING": "Pending",
+        "PAID": "Paid",
+        "ACTIVE": "Active",
+        "INACTIVE": "Inactive",
+        "OPENED": "Open",
+        "CLOSED": "Closed"
+      }
+    },
+    "EXPIRY_STATUS": {
+      "TITLE": "Expiry",
+      "OPTIONS": {
+        "VALID": "Valid",
+        "NEAR_EXPIRY": "Near Expiry",
+        "EXPIRED": "Expired"
+      }
+    }
+  },
+
+
+
+  "ERRORS": {
+    "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+    "REQUEST_FAILED": "Connection failed. Please try again.",
+    "REQUIRED_FIELDS": "Please fill in all required fields",
+    "HINT": "Select who is currently at the till",
+    "IMAGE_READ_ERROR": "Error reading the image",
+    "SELECT_VALID_IMAGE": "Please select a valid image",
+    "POS_LOAD_ERROR": "Error loading the POS",
+    "SAVE_ERROR": "Error saving data",
+    "CLEAR_ERROR": "Error clearing data"
+  },
+
+
+
+  "SERVER_MESSAGES": {
+    "RECORD_SAVED_SUCCESS": "Record saved successfully! 👍",
+    "RECORD_CREATED_SUCCESS": "Record created successfully! 🎉",
+    "RECORD_UPDATED_SUCCESS": "Record updated successfully! ✅",
+    "RECORD_DELETED_SUCCESS": "Record deleted successfully! 🗑️",
+    "RECORD_ALREADY_EXISTS": "Oops! This record already exists.",
+    "RECORD_NOT_FOUND": "We couldn’t find this record.",
+    "NO_CHANGES_DETECTED": "No changes detected.",
+    "CORRECT_HIGHLIGHTED_ERRORS": "Please fix the highlighted errors and try again.",
+    "OPERATION_FAILED": "Couldn’t complete the operation. Please try again.",
+    "CASH_REGISTER_OPENED": "Cash register opened! You can start processing sales.",
+    "CASH_REGISTER_ALREADY_OPEN": "You already have an open cash register. Close the current one before opening another.",
+    "CASH_REGISTER_CLOSED": "Cash register closed successfully. Thank you for your shift!",
+    "UNEXPECTED_ERROR": "Oops! An unexpected error occurred.",
+    "UNAUTHORISED_ACTION": "You don’t have permission to do this.",
+    "ACCESS_FORBIDDEN": "Access to this resource is forbidden.",
+    "INSUFFICIENT_INGREDIENT": "There are not enough ingredients to prepare this product."
+  }
+}

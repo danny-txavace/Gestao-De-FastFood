@@ -1,0 +1,83 @@
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '25rem' }"
+  position="top"
+>
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center">
+      <h2>Update Customer</h2>
+    </div>
+  </ng-template>
+  <span class="login_subtitle block mb-5">Please confirm that the updated information is accurate before proceeding.</span>
+  <form
+    [formGroup]="form"
+    class="my-1"
+  >
+    <div class="w-full flex flex-wrap justify-center items-center gap-3">
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-user" />
+          <input type="text" pInputText id="on_fullname"  autocomplete="off" formControlName="fullName" [ngClass]="{'invalid-input': isErrorFullName}"/>
+        </p-iconfield>
+          <label for="on_fullname">FullName</label>
+          @if (isErrorFullName) {
+            <small class="invalid-field">
+              FullName is required
+            </small>
+          }
+      </p-floatlabel>
+      @if (isErrorFullName) {
+        <div class="mb-1"></div>
+      }
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-phone" />
+          <input type="tel" mask="00 000 0000" placeholder="8X XXX XXXX" pInputText id="on_phoneNumber"  autocomplete="off" formControlName="phoneNumber"/>
+        </p-iconfield>
+          <label for="on_phoneNumber">Phone Number</label>
+      </p-floatlabel>
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-sitemap" />
+          <p-inputnumber
+          [min]="0"
+          inputId="on_orderQty"
+          autocomplete="off"
+          class="w-full"
+          formControlName="orderQty"/>
+        </p-iconfield>
+        <label for="on_orderQty">Order Quantity</label>
+      </p-floatlabel>
+    </div>
+  </form>
+  <ng-template #footer>
+    <div class="mt-5 w-full flex justify-between items-center">
+      <button pRipple type="button"
+        class="btn_cancel"
+        (click)="visible = false"
+      >
+        Cancel
+      </button>
+
+      <span class="default_btn">
+        <button pRipple type="submit"
+          class="cursor-pointer"
+          [disabled]="showLoader"
+          (click)="onSubmit()"
+        >
+          @if (showLoader) {
+            <div class="loader">
+              <span class="small_loader"></span>
+            </div>
+          }
+          @else {
+            Update
+          }
+        </button>
+      </span>
+    </div>
+  </ng-template>
+</p-dialog>

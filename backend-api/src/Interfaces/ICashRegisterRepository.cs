@@ -1,0 +1,19 @@
+using unipos_basic_backend.src.DTOs;
+
+namespace unipos_basic_backend.src.Interfaces
+{
+    public interface ICashRegisterRepository
+    {
+        Task<IEnumerable<CashRegisterListDTO>> GetAllAsync();
+        Task<ResponseDTO> OpenRegisterAsync(CashRegisterOpenDTO cashRegister);
+        Task<ResponseDTO> CloseRegisterAsync(CashRegisterCloseDTO cashRegister);
+        Task<ResponseDTO> DeleteAsync(Guid id);
+        Task<IEnumerable<CashRegisterSelectUserDTO>> GetSelectUserToOpenCash();
+        Task<IEnumerable<CashRegisterSelectUserDTO>> GetSelectUserToCloseCash();
+        Task<IEnumerable<CashRegisterDetailListDTO>> GetAllDetails(Guid cashRegisterId);
+        Task<ResponseDTO> CreateCashDetails(CashRegisterDetailCreateDTO cashRegister);
+        Task<ResponseDTO> UpdateCashDetails(CashRegisterDetailUpdateDTO cashRegister);
+        Task<CashRegisterCardsDTO> GetCardAsync();
+        Task<CashRegisterCardsDTO> GetCardAsync(Guid id);
+    }
+}

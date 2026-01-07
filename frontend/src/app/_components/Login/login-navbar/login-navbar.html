@@ -1,0 +1,21 @@
+<p-toolbar animate.enter="enter-animation">
+  <ng-template #start>
+    <div class="flex items-center gap-2 w-full min-w-0">
+      <i class="pi pi-shop" style="font-size: 2.5rem; color: oklch(68.285% 0.12991 158.169);"></i>
+      <h2 class="truncate flex justify-start items-center w-full min-w-0 max-[400px]:w-[42dvw] font-bold! text-gray-500! text-[18pt]!">
+      Tio Laice</h2>
+    </div>
+  </ng-template>
+
+  <ng-template #end>
+    <div class="btn_only_icon flex items-center gap-1">
+      <button (click)="toggleTheme()">
+        <i
+          class="pi"
+          [ngClass]="isDark ? 'pi-sun' : 'pi-moon'"
+        ></i>
+      </button>
+      <button (click)="toggleLang()" type="button" class=""> {{ 'MANAGEMENT_NAVBAR.LANGUAGE.ABBREVIATION' | translate }} </button>
+    </div>
+  </ng-template>
+</p-toolbar>

@@ -1,0 +1,551 @@
+<!-- Desktop -->
+<section class="w-full hidden min-[1035px]:block">
+  <p-toolbar>
+    <ng-template #start>
+      <article class="flex items-center">
+        <!-- <img [src]="logo" width="45" height="45" alt="Logo"> -->
+         <i class="pi pi-shop" style="font-size: 2rem; color: oklch(68.285% 0.12991 158.169);"></i>
+      </article>
+    </ng-template>
+
+    <ng-template #center>
+      <article class="navbar_btn">
+        <a  pRipple
+            (click)="navigateTo('dashboard')"
+            routerLinkActive="active-btn"
+            [routerLink]="[ '/v1-main_management', { outlets: { 'management-outlet': [ 'v1-main_dashboard' ]}}]"
+          >
+          <p>{{ 'MANAGEMENT_NAVBAR.DASHBOARD' | translate }}</p>
+        </a>
+        <a  pRipple
+            (click)="navigateTo('pos')"
+            routerLinkActive="active-btn"
+            [routerLink]="['/v1-main_management', {outlets: {'management-outlet': ['v1-main_pos']}}]"
+          >
+          <p>{{ 'MANAGEMENT_NAVBAR.POS' | translate }}</p>
+        </a>
+        <a  pRipple
+            (click)="navigateTo('cashRegister')"
+            routerLinkActive="active-btn"
+            [routerLink]="['/v1-main_management', {outlets: {'management-outlet': ['v1-main_register']}}]"
+          >
+          <p>{{ 'MANAGEMENT_NAVBAR.CASH_REGISTER' | translate }}</p>
+        </a>
+        <a  pRipple
+            (click)="navigateTo('orders')"
+            routerLinkActive="active-btn"
+            [routerLink]="['/v1-main_management', {outlets: {'management-outlet': ['v1-main_orders']}}]"
+          >
+          <p>{{ 'MANAGEMENT_NAVBAR.ORDERS_LIST' | translate }}</p>
+        </a>
+        <a  pRipple
+            (click)="navigateTo('products')"
+            routerLinkActive="active-btn"
+            [routerLink]="['/v1-main_management', {outlets: {'management-outlet': ['v1-main_products']}}]"
+          >
+          <p>{{ 'MANAGEMENT_NAVBAR.MENU' | translate }}</p>
+        </a>
+        <a  pRipple
+            (click)="navigateTo('ingredients')"
+            routerLinkActive="active-btn"
+            [routerLink]="['/v1-main_management', {outlets: {'management-outlet': ['v1-main_ingredients']}}]"
+          >
+          <p>{{ 'MANAGEMENT_NAVBAR.INGREDIENTS' | translate }}</p>
+        </a>
+      </article>
+    </ng-template>
+
+    <ng-template #end>
+      <article class="flex items-center">
+        <button (click)="toggleBtn('pop_user', $event)"
+          type="button"
+          class="flex items-center"
+        >
+          <div
+            class="flex justify-center items-center bg-[#24704D] text-[#FFFFFF] text-xl font-light w-9 h-9 rounded-full"
+          >
+            {{ authService.receiveSession().username.charAt(0).toUpperCase() }}
+          </div>
+        </button>
+        <p-popover #isOpenUserMenu appendTo="body" styleClass="navbar_menu navbar_btn hidden min-[1023px]:block">
+          <article class="flex flex-col gap-1 w-60">
+            <div class="navbar_profile">
+              <span class="flex justify-center items-center">
+                <div
+                class="flex justify-center items-center bg-[#24704D] text-[#FFFFFF] text-xl font-bold w-11 h-11 rounded-full"
+                >
+                  {{ authService.receiveSession().username.charAt(0).toUpperCase() }}
+                </div>
+              </span>
+              <span>
+                <p class="max-w-[250px] truncate">{{ authService.receiveSession().username }}</p>
+              </span>
+              <small>{{ authService.receiveSession().roles }}</small>
+            </div>
+            <a  pRipple
+              (click)="navigateTo('systemUser')"
+              [ngClass]="{ 'navbar_btn_active' : isActivePeopleSU }"
+              [routerLink]="['/v1-main_management', {outlets: {'management-outlet': ['v1-main_system_users']}}]"
+            >
+              <span class="flex gap-2 justify-start items-center">
+                <i class="pi pi-id-card"></i>
+                <p>{{ 'MANAGEMENT_NAVBAR.SYSTEM_USERS' | translate }}</p>
+              </span>
+            </a>
+
+            <a  pRipple
+              (click)="toggleBtn('pop_theme')"
+              [ngClass]="{ 'navbar_btn_active' : isOpenTheme }"
+            >
+              <span class="flex justify-start items-center gap-2">
+                <i class="pi pi-palette"></i>
+                <p>{{ 'MANAGEMENT_NAVBAR.THEME.TITLE' | translate }}</p>
+              </span>
+              <span class="flex justify-end items-center gap-1">
+                @if (isDark) {
+                  <small>{{ 'MANAGEMENT_NAVBAR.THEME.DARK' | translate }}</small>
+                } @else if (isLight) {
+                  <small>{{ 'MANAGEMENT_NAVBAR.THEME.LIGHT' | translate }}</small>
+                }
+                <i class="pi pi-angle-right"></i>
+              </span>
+            </a>
+
+            <a  pRipple
+              (click)="toggleBtn('pop_i18n')"
+              [ngClass]="{ 'navbar_btn_active' : isOpenLang }"
+            >
+              <span class="flex justify-start items-center gap-2">
+                <i class="pi pi-language"></i>
+                <p>{{ 'MANAGEMENT_NAVBAR.LANGUAGE.TITLE' | translate }}</p>
+              </span>
+              <span class="flex justify-end items-center gap-1">
+                <small>{{ titleLang }}</small>
+                <i class="pi pi-angle-right"></i>
+              </span>
+            </a>
+            <!--
+            <a  pRipple
+              (click)="navigateTo('customers')"
+              [ngClass]="{ 'navbar_btn_active' : isActivePeopleC }"
+              [routerLink]="['/v1-main_management', {outlets: {'management-outlet': ['v1-main_customers']}}]"
+            >
+              <span class="flex gap-2 items-center">
+                <i class="pi pi-users"></i>
+                <p>{{ 'PEOPLE.CUSTOMERS.TITLE' | translate }}</p>
+              </span>
+            </a>
+
+            <a  pRipple
+              routerLinkActive="active-btn"
+              [routerLink]="['/', {outlets: {'management-outlet': ['v1-main_products']}}]"
+            >
+              <span class="flex gap-2 items-center">
+                <i class="pi pi-cog"></i>
+                <p>{{ 'SETTINGS.TITLE' | translate }}</p>
+              </span>
+            </a>
+
+            <p-divider />
+            <a  pRipple
+              routerLinkActive="active-btn"
+              [routerLink]="['/', {outlets: {'management-outlet': ['v1-main_products']}}]"
+            >
+              <span class="flex gap-2 items-center">
+                <i class="pi pi-question-circle"></i>
+                <p>{{ 'HELP.TITLE' | translate }}</p>
+              </span>
+            </a>
+
+            <a  pRipple
+              routerLinkActive="active-btn"
+              [routerLink]="['/', {outlets: {'management-outlet': ['v1-main_products']}}]"
+            >
+              <span class="flex gap-2 items-center">
+                <i class="pi pi-info-circle"></i>
+                <p>{{ 'ABOUT.TITLE' | translate }}</p>
+              </span>
+            </a>
+
+            <a  pRipple
+              routerLinkActive="active-btn"
+              [routerLink]="['/', {outlets: {'management-outlet': ['v1-main_products']}}]"
+            >
+              <span class="flex justify-start gap-1 items-center">
+                <i class="material-symbols-outlined" style="font-weight: 200; font-size: 1.6rem;">license</i>
+                <p>{{ 'LICENSE.TITLE' | translate }}</p>
+              </span>
+            </a>
+          -->
+
+            <p-divider />
+            <a  pRipple
+              (click)="onSignOut()"
+            >
+              <span class="flex gap-2 items-center">
+                <i class="pi pi-sign-out"></i>
+                <p>{{ 'MANAGEMENT_NAVBAR.SIGN_OUT' | translate }}</p>
+              </span>
+            </a>
+          </article>
+        </p-popover>
+      </article>
+    </ng-template>
+  </p-toolbar>
+
+  @if (isOpenTheme)
+  {
+    <div #isOpenThemeMenu
+      class="navbar_sub_menu navbar_btn w-50 absolute right-[240px] top-[194px] flex flex-col gap-1"
+    >
+      <button  pRipple
+        (click)="toggleBtn('theme_light'); openPopUserMenu($event)"
+      >
+        <span class="flex gap-2 items-center">
+          <i class="pi pi-sun"></i>
+          <p>{{ 'MANAGEMENT_NAVBAR.THEME.LIGHT' | translate }}</p>
+        </span>
+        <i
+          class="pi"
+          [ngClass]="{
+            'pi-circle-on isActive': isLight,
+            'pi-circle-off isInactive': !isLight
+          }"
+        ></i>
+      </button>
+      <button  pRipple
+        (click)="toggleBtn('theme_dark'); openPopUserMenu($event)"
+      >
+        <span class="flex gap-2 items-center">
+          <i class="pi pi-moon"></i>
+          <p>{{ 'MANAGEMENT_NAVBAR.THEME.DARK' | translate }}</p>
+        </span>
+        <i
+          class="pi"
+          [ngClass]="{
+            'pi-circle-on isActive': isDark,
+            'pi-circle-off isInactive': !isDark
+          }"
+        ></i>
+      </button>
+    </div>
+  }
+  @else if (isOpenLang)
+  {
+    <div #isOpeni18nMenu
+      class="navbar_sub_menu navbar_btn w-50 absolute right-[240px] top-[243px] flex flex-col gap-1"
+    >
+      <button  pRipple
+        (click)="toggleBtn('i18n_en'); openPopUserMenu($event)"
+      >
+        <p>{{ 'MANAGEMENT_NAVBAR.LANGUAGE.OPTIONS.EN' | translate }}</p>
+        <i
+          class="pi"
+          [ngClass]="{
+            'pi-circle-on isActive': isEN,
+            'pi-circle-off isInactive': !isEN
+          }"
+        ></i>
+      </button>
+      <button  pRipple
+        (click)="toggleBtn('i18n_es'); openPopUserMenu($event)"
+      >
+        <p>{{ 'MANAGEMENT_NAVBAR.LANGUAGE.OPTIONS.ES' | translate }}</p>
+        <i
+          class="pi"
+          [ngClass]="{
+            'pi-circle-on isActive': isES,
+            'pi-circle-off isInactive': !isES
+          }"
+        ></i>
+      </button>
+      <button  pRipple
+        (click)="toggleBtn('i18n_pt'); openPopUserMenu($event)"
+      >
+        <p>{{ 'MANAGEMENT_NAVBAR.LANGUAGE.OPTIONS.PT' | translate }}</p>
+        <i
+          class="pi"
+          [ngClass]="{
+            'pi-circle-on isActive': isPT,
+            'pi-circle-off isInactive': !isPT
+          }"
+        ></i>
+      </button>
+      <button  pRipple
+        (click)="toggleBtn('i18n_zh'); openPopUserMenu($event)"
+      >
+        <p>{{ 'MANAGEMENT_NAVBAR.LANGUAGE.OPTIONS.ZH' | translate }}</p>
+        <i
+          class="pi"
+          [ngClass]="{
+            'pi-circle-on isActive': isZH,
+            'pi-circle-off isInactive': !isZH
+          }"
+        ></i>
+      </button>
+    </div>
+  }
+</section>
+
+
+
+<!-- Mobile Menu Toggle (visível apenas em mobile) -->
+<div #isOpenMobileMenu [class.mobile_scroll_bg-trans]="!scrolled" [class.mobile_scroll_bg-default]="scrolled"
+[ngClass]="!menuOpen ? '-translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none'"
+  class="hidden max-[1035px]:block transition-all duration-450 ease-in-out fixed top-0 left-0 right-0 mobile_navbar_menu"
+>
+  <div class="w-full flex justify-between items-center">
+    <button pRipple type="button" (click)="toggleBtn('mobile_menu')"
+      class="btnMenuMobile cursor-pointer rounded-md transition-transform duration-450 active:scale-95 active:bg-white/15">
+      <img [src]="logo" width="45" height="45" alt="Logo" class="p-1">
+      <i class="pi pi-bars" style="font-size: 1.2rem"></i>
+    </button>
+
+    <div class="flex items-center gap-1 mr-[1rem]">
+      <button pRipple type="button" class="relative inline-block btn_only_icon">
+        <i class="pi pi-bell"></i>
+        <span
+          class="absolute top-1.5 right-1.5 block h-1.5 w-1.5 rounded-full bg-red-600"
+          aria-hidden="true">
+        </span>
+      </button>
+      <button pRipple
+        type="button" (click)="toggleThemeMobile()"
+        class="btn_only_icon"
+      >
+        <i
+        class="pi"
+        [ngClass]="isDark ? 'pi-sun' : 'pi-moon'"
+      ></i>
+      </button>
+
+      <button pRipple type="button" (click)="toggleLangMobile()" class="btn_only_icon"> {{ 'LANGUAGE.ABBREVIATION' | translate }} </button>
+    </div>
+  </div>
+</div>
+
+<aside #isOpenMobileMenu [ngClass]="menuOpen ? 'translate-x-0 opacity-100 pointer-events-auto' : '-translate-x-full opacity-0 pointer-events-none'"
+  class="hidden max-[1053px]:block max-[340px]:w-[100dvw] max-[600px]:w-[70dvw] max-[780px]:w-[35dvw] max-[900px]:w-[30dvw] max-[1035px]:w-[26dvw] transition-all duration-450 ease-in-out fixed left-0 top-0 bottom-0 mobile_sidebar scrollbar_custom">
+  <div class="w-full h-full flex flex-col justify-between">
+    <div class="w-full cursor-pointer">
+      <div class="w-full flex justify-end items-center mb-3">
+        <i pRipple
+        (click)="toggleBtn('mobile_menu')"
+         class="pi pi-times active:scale-95 active:bg-white/15" style="font-size: 1.1rem"></i>
+      </div>
+
+      <div class="w-full flex flex-col gap-0 py-2 cursor-default">
+        <span class="flex justify-center">
+          <div
+            class="flex justify-center items-center bg-[#24704D] text-[#FFFFFF] text-xl font-bold w-11 h-11 rounded-full"
+          >
+            {{ authService.receiveSession().username.charAt(0).toUpperCase() }}
+          </div>
+        </span>
+        <span class="flex justify-center">
+          <p class="navbar_profile_name max-w-[250px] truncate">
+            Ramadan Ibraimo A.
+          </p>
+        </span>
+        <small class="navbar_profile_status flex justify-center">
+          Administrator
+        </small>
+      </div>
+      <p-divider class="!my-3" />
+      <div btn-ignore-click class="w-full  cursor-pointer gap-1">
+        <a  pRipple
+          (click)="toggleBtn('isDashboard')"
+          routerLinkActive="active-btn"
+          class="navbar_btn flex justify-between items-center"
+        >
+          <span class="w-full flex justify-start items-center gap-2">
+            <i class="pi pi-home"></i>
+            <p>{{ 'DASHBOARD.TITLE' | translate }}</p>
+          </span>
+          <i class="pi pi-angle-down"></i>
+        </a>
+        @if (isOpenDashboard)
+        {
+          <div class="navbar_menu hidden max-[1035px]:block">
+            <div class="w-full flex flex-col gap-1 justify-center items-start w-60">
+              <a  pRipple
+                [routerLink]="[ '/v1-main_management', { outlets: { 'management-outlet': [ 'v1-main_dashboard' ]}}]"
+                [routerLinkActive]="['mobile_navbar_btn_active']"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="mobile_navbar_btn flex justify-start items-center"
+              >
+                <span class="ml-6 flex gap-2 items-center">
+                  <span class="active-line_btn"></span>
+                  <p>{{ 'DASHBOARD.OVERVIEW.TITLE' | translate }}</p>
+                </span>
+              </a>
+              <a  pRipple
+                [routerLink]="[
+                  '/v1-main_management',
+                  {
+                    outlets: {
+                      'management-outlet': [
+                        'v1-main_dashboard',
+                        {
+                          outlets: { 'dashboard-outlet': ['dashboard-sales'] }
+                        }
+                      ]
+                    }
+                  }
+                ]"
+                [routerLinkActive]="['mobile_navbar_btn_active']"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="mobile_navbar_btn flex justify-start items-center"
+              >
+                <span class="ml-6 flex gap-2 items-center">
+                  <span class="active-line_btn"></span>
+                  <p>{{ 'SALES.TITLE' | translate }}</p>
+                </span>
+              </a>
+              <a  pRipple
+                [routerLink]="[
+                  '/v1-main_management',
+                  {
+                    outlets: {
+                      'management-outlet': [
+                        'v1-main_dashboard',
+                        {
+                          outlets: { 'dashboard-outlet': ['dashboard-register'] }
+                        }
+                      ]
+                    }
+                  }
+                ]"
+                [routerLinkActive]="['mobile_navbar_btn_active']"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="mobile_navbar_btn flex justify-start items-center"
+              >
+                <span class="ml-6 flex gap-2 items-center">
+                  <span class="active-line_btn"></span>
+                  <p>{{ 'REGISTER.TITLE' | translate }}</p>
+                </span>
+              </a>
+              <a  pRipple
+                [routerLink]="[
+                  '/v1-main_management',
+                  {
+                    outlets: {
+                      'management-outlet': [
+                        'v1-main_dashboard',
+                        {
+                          outlets: { 'dashboard-outlet': ['dashboard-products'] }
+                        }
+                      ]
+                    }
+                  }
+                ]"
+                [routerLinkActive]="['mobile_navbar_btn_active']"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="mobile_navbar_btn flex justify-start items-center"
+              >
+                <span class="ml-6 flex gap-2 items-center">
+                  <span class="active-line_btn"></span>
+                  <p>{{ 'PRODUCTS.TITLE' | translate }}</p>
+                </span>
+              </a>
+            </div>
+          </div>
+        }
+
+        <a  pRipple
+            routerLinkActive="active-btn"
+            [routerLink]="['/v1-main_management', {outlets: {'management-outlet': ['v1-main_pos']}}]"
+            class="navbar_btn flex justify-start items-center gap-2"
+          >
+          <i class="pi pi-shopping-cart"></i>
+          <p>{{ 'POS.TITLE' | translate }}</p>
+        </a>
+        <a  pRipple
+            routerLinkActive="active-btn"
+            [routerLink]="['/v1-main_management', {outlets: {'management-outlet': ['v1-main_sales']}}]"
+            class="navbar_btn flex justify-start items-center gap-2"
+          >
+          <i class="pi pi-cart-arrow-down"></i>
+          <p>{{ 'SALES.TITLE' | translate }}</p>
+        </a>
+        <a  pRipple
+            routerLinkActive="active-btn"
+            [routerLink]="['/v1-main_management', {outlets: {'management-outlet': ['v1-main_register']}}]"
+            class="navbar_btn flex justify-start items-center gap-2"
+          >
+          <i class="pi pi-inbox"></i>
+          <p>{{ 'REGISTER.TITLE' | translate }}</p>
+        </a>
+        <a  pRipple
+            routerLinkActive="active-btn"
+            [routerLink]="['/v1-main_management', {outlets: {'management-outlet': ['v1-main_products']}}]"
+            class="navbar_btn flex justify-start items-center gap-2"
+          >
+          <i class="pi pi-box"></i>
+          <p>{{ 'PRODUCTS.TITLE' | translate }}</p>
+        </a>
+
+        <a  pRipple
+            routerLinkActive="active-btn"
+            [routerLink]="['/v1-main_management', {outlets: {'management-outlet': ['v1-main_invoice']}}]"
+            class="navbar_btn flex justify-start items-center gap-2"
+          >
+          <i class="pi pi-receipt"></i>
+          <p>{{ 'INVOICES.TITLE' | translate }}</p>
+        </a>
+        <p-divider class="!my-3" />
+        <a  pRipple
+          routerLinkActive="active-btn"
+          [routerLink]="['/', {outlets: {'management-outlet': ['v1-main_products']}}]"
+          class="navbar_btn flex justify-start items-center"
+        >
+          <span class="flex gap-2 items-center">
+            <i class="pi pi-cog"></i>
+            <p>{{ 'SETTINGS.TITLE' | translate }}</p>
+          </span>
+        </a>
+        <a  pRipple
+          routerLinkActive="active-btn"
+          [routerLink]="['/', {outlets: {'management-outlet': ['v1-main_products']}}]"
+          class="navbar_btn flex justify-start items-center"
+        >
+          <span class="flex gap-2 items-center">
+            <i class="pi pi-question-circle"></i>
+            <p>{{ 'HELP.TITLE' | translate }}</p>
+          </span>
+        </a>
+        <a  pRipple
+          routerLinkActive="active-btn"
+          [routerLink]="['/', {outlets: {'management-outlet': ['v1-main_products']}}]"
+          class="navbar_btn flex justify-start items-center"
+        >
+          <span class="flex gap-2 items-center">
+            <i class="pi pi-info-circle"></i>
+            <p>{{ 'ABOUT.TITLE' | translate }}</p>
+          </span>
+        </a>
+        <a  pRipple
+          routerLinkActive="active-btn"
+          [routerLink]="['/', {outlets: {'management-outlet': ['v1-main_products']}}]"
+          class="navbar_btn flex justify-start items-center"
+        >
+          <span class="flex gap-1 items-center">
+            <span class="material-symbols-outlined" style="font-weight: 200; font-size: 1.6rem;">license</span>
+            <p>{{ 'LICENSE.TITLE' | translate }}</p>
+          </span>
+        </a>
+        <a  pRipple
+          routerLinkActive="active-btn"
+          [routerLink]="['/v1-sign_in']"
+          class="navbar_btn flex justify-start items-center mt-25"
+        >
+          <span class="flex gap-2 items-center">
+            <i class="pi pi-sign-out"></i>
+            <p>{{ 'SIGN_OUT' | translate }}</p>
+          </span>
+        </a>
+        <small class="text-center">{{ 'FOOTER' | translate }}</small>
+      </div>
+    </div>
+  </div>
+</aside>

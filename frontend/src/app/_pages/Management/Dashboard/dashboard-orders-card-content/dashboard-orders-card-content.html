@@ -1,0 +1,28 @@
+<article class="w-full default_card">
+  <span class="flex flex-col gap-1">
+    <div class="flex justify-between items-center">
+      <span class="flex justify-start items-center gap-5">
+        <h2>#{{ formatQty(data.orderNumber) }}</h2>
+        <span class="flex gap-2 justify-start items-center">
+          @for (item of data.methods; track item) {
+            @if(item === 'cash') { <span class="status_green">{{ 'REPORT.CASH' | translate }}</span> }
+            @if(item === 'eMola') { <span class="status_orange">E-Mola</span> }
+            @if(item === 'mPesa') { <span class="status_red">M-Pesa</span> }
+          }
+        </span>
+      </span>
+      <h2>{{ formatAmount(data.totalPay) }}</h2>
+    </div>
+    <h5>{{ data.description }}</h5>
+    <div class="recent_sales_footer flex gap-10 justify-start items-center">
+      <span class="flex gap-3 items-center">
+        <i class="pi pi-clock"></i>
+        <p>{{ data.time }}</p>
+      </span>
+      <span class="flex gap-3 items-center">
+        <i class="pi pi-user"></i>
+        <p>{{ data.customerName }}</p>
+      </span>
+    </div>
+  </span>
+</article>

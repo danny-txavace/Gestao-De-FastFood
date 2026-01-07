@@ -1,0 +1,103 @@
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '25rem' }"
+  position="top"
+>
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center">
+      <h2>{{ 'DIALOGS.CLOSE_CASH_REGISTER' | translate }}</h2>
+    </div>
+  </ng-template>
+  <div class="grid gap-2">
+    <span class="flex items-center justify-between">
+      <h5>
+        {{ 'DIALOGS.INITIAL_BALANCE' | translate }}
+      </h5>
+      <h2 #countUpAmount_InitialBalance>0,00</h2>
+    </span>
+    <span class="flex items-center justify-between">
+      <h5>
+        {{ 'DIALOGS.TOTAL_INCOMES' | translate }}
+      </h5>
+      <h2 class="text-green-600!" #countUpAmount_TotalRevenue>0,00</h2>
+    </span>
+    <span class="flex items-center justify-between">
+      <h5>
+        {{ 'DIALOGS.TOTAL_EXPENSES' | translate }}
+      </h5>
+      <h2 class="text-red-600!" #countUpAmount_TotalExpense>0,00</h2>
+    </span>
+    <span class="flex items-center justify-between">
+      <h5>
+        {{ 'DIALOGS.EXPECTED_TOTAL' | translate }}
+      </h5>
+      <h2 class="text-blue-600!" #countUpAmount_TotalProfit>0,00</h2>
+    </span>
+  </div>
+  <p-divider style="margin-top: 0.7rem; margin-bottom: 0.7rem;"/>
+  <span class="login_subtitle block my-5">{{ 'DIALOGS.INSTRUCTION' | translate }}</span>
+  <form
+    [formGroup]="form"
+    class="my-1"
+  >
+    <div class="w-full flex flex-wrap justify-center items-center gap-3">
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-select
+            formControlName="cashRegisterId"
+            inputId="on_id"
+            [options]="usersOptions"
+            optionLabel="username"
+            optionValue="id"
+            class="w-full"
+            appendTo="body"
+            [filter]="false"
+            filterBy="username"
+          />
+        </p-iconfield>
+          <label for="on_id">{{ 'DIALOGS.USER_SELECTION' | translate }}</label>
+      </p-floatlabel>
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-money-bill" />
+          <p-inputnumber
+          [min]="0"
+          inputId="on_amount"
+          autocomplete="off"
+          class="w-full"
+          formControlName="amount"/>
+        </p-iconfield>
+        <label for="on_amount">{{ 'DIALOGS.CASH_AMOUNT' | translate }}</label>
+      </p-floatlabel>
+    </div>
+  </form>
+  <ng-template #footer>
+    <div class="mt-2 w-full flex justify-between items-center">
+      <button pRipple type="button"
+        class="btn_cancel"
+        (click)="visible = false"
+      >
+        {{ 'DIALOGS.ACTIONS.CANCEL' | translate }}
+      </button>
+
+      <span class="default_btn">
+        <button pRipple type="submit"
+          class="cursor-pointer"
+          [disabled]="showLoader"
+          (click)="onSubmit()"
+        >
+          @if (showLoader) {
+            <div class="loader">
+              <span class="small_loader"></span>
+            </div>
+          }
+          @else {
+            {{ 'DIALOGS.ACTIONS.CONFIRM' | translate }}
+          }
+        </button>
+      </span>
+    </div>
+  </ng-template>
+</p-dialog>

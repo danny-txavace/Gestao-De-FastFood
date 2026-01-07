@@ -1,0 +1,43 @@
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '25rem' }"
+  position="top"
+>
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center">
+      <h2>{{ 'DIALOGS.DELETE.TITLE' | translate }} {{ entityName }}: {{ name }}</h2>
+    </div>
+  </ng-template>
+  <span class="login_subtitle block mb-5">
+    <p>{{ 'DIALOGS.DELETE.INFO_0' | translate }}: <strong>{{ name }}</strong>?</p>
+    <p class="mt-5">{{ 'DIALOGS.DELETE.INFO_1' | translate }}</p>
+    <p>
+      {{ 'DIALOGS.DELETE.INFO_2' | translate }}
+    </p>
+  </span>
+  <ng-template #footer>
+    <div class="mt-5 w-full flex justify-between items-center">
+      <button pRipple type="button"
+        class="btn_cancel"
+        (click)="visible = false"
+      >
+        {{ 'DIALOGS.DELETE.ACTIONS.CANCEL' | translate }}
+      </button>
+
+      <button pRipple type="submit"
+        class="btn_delete_normal"
+        (click)="onDelete()"
+      >
+        @if (showLoader) {
+          <div class="loader">
+            <span class="small_loader"></span>
+          </div>
+        }
+        @else {
+          {{ 'DIALOGS.DELETE.ACTIONS.CONFIRM' | translate }}
+        }
+      </button>
+    </div>
+  </ng-template>
+</p-dialog>

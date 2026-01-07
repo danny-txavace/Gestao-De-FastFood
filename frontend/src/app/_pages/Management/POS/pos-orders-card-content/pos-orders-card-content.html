@@ -1,0 +1,43 @@
+<article class="w-full default_card">
+  <button pRipple type="button" class="pos_close_order absolute top-1 right-1" (click)="cartItemRepository.removeItem(cartItem)">
+    <i class="pi pi-times"></i>
+  </button>
+
+  <div class="w-full flex gap-3 items-center justify-start">
+    @if (cartItem.product.imageUrl)
+    {
+      <img src="{{ cartItem.product.imageUrl }}" alt="User" class="w-18 h-18 rounded-lg shrink-0">
+    }
+    @else
+    {
+      <div class="bg-[#206444] shrink-0 flex justify-center items-center w-18 h-18 rounded-lg text-[1.5rem] font-thin text-white">
+        {{ cartItem.product.itemName.trim().charAt(0).toUpperCase() }}
+      </div>
+    }
+    <div class="w-full flex justify-between">
+      <span class="flex gap-1 flex-col items-start justify-start">
+        <h5>{{ cartItem.product.itemName }}</h5>
+        <h2>{{ formatPrice(cartItem.product.price) }}</h2>
+      </span>
+      <span class="flex flex-col gap-1 items-center justify-between">
+        <h5>{{ 'POS.NEW_ORDER.QUANTITY' | translate }}</h5>
+        <p-inputnumber class="p-inputnumber-horizontal-centered"
+          [min]="1"
+          [(ngModel)]="cartItem.quantity"
+          (ngModelChange)="quantityChange.emit(cartItem.quantity)"
+          [showButtons]="true"
+          buttonLayout="horizontal"
+          spinnerMode="horizontal"
+          inputId="horizontal"
+        >
+          <ng-template #incrementbuttonicon>
+              <span class="pi pi-plus"></span>
+          </ng-template>
+          <ng-template #decrementbuttonicon>
+              <span class="pi pi-minus"></span>
+          </ng-template>
+        </p-inputnumber>
+      </span>
+    </div>
+  </div>
+</article>

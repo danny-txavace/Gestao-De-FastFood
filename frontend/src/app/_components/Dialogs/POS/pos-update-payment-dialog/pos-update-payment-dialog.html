@@ -1,0 +1,222 @@
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  position="top"
+  (onHide)="onCancel()"
+>
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center">
+      <h2>{{ 'DIALOGS.PAYMENT.TITLE' | translate }}: {{ customerName }}</h2>
+    </div>
+  </ng-template>
+  <span class="login_subtitle block">{{ 'DIALOGS.PAYMENT.INFO' | translate }}</span>
+  <span class="login_subtitle block mb-5">{{ 'DIALOGS.PAYMENT.SELECT_METHOD' | translate }}</span>
+  <form class="mb-6 w-full flex flex-col justify-center">
+    <section class="flex gap-5">
+      <article class="relative inline-block">
+        <div
+          class="pos_img_btn w-35 h-35 flex flex-col gap-3 justify-center items-center rounded-md overflow-hidden cursor-pointer select-none"
+          [class.blur-effect]="isCashHovered"
+          (mouseenter)="isCashHovered = true"
+          (mouseleave)="isCashHovered = false"
+          (click)="toggleMethod('cash')">
+
+          <!-- Imagem -->
+          <img
+            src="/assets/images/cash_pt.png"
+            alt="product"
+            class="w-full h-full object-cover rounded-md transition-all duration-300">
+
+          <!-- Overlay com ícone + ou x -->
+          <div
+            class="w-35 h-35 absolute inset-0 bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none"
+            [class.opacity-100]="isCashHovered">
+
+            <i
+              style="font-size: 2rem;"
+              class="pi"
+              [class.pi-plus]="!cashPriceEnabled"
+              [class.pi-times]="cashPriceEnabled">
+            </i>
+          </div>
+        </div>
+
+        <!-- Campo de preço (aparece só quando ativado) -->
+        <div #cashField
+          class="w-35 mt-3 transition-all duration-300"
+          [class.opacity-0]="!cashPriceEnabled"
+          [class.opacity-100]="cashPriceEnabled"
+          [class.h-0]="!cashPriceEnabled"
+          [class.h-auto]="cashPriceEnabled">
+
+          <p-floatlabel variant="on" class="w-full">
+            <p-iconfield>
+              <p-inputnumber
+              [readonly]="isCashReadonly"
+                [min]="0"
+                inputId="on_cash"
+                autocomplete="off"
+                class="w-full"
+                [formControl]="cashPriceControl" />
+            </p-iconfield>
+            <label for="on_cash">{{ 'DIALOGS.PAYMENT.AMOUNT' | translate }}</label>
+          </p-floatlabel>
+        </div>
+      </article>
+      <article class="relative inline-block">
+        <div
+          class="pos_img_btn w-35 h-35 flex flex-col gap-3 justify-center items-center rounded-md overflow-hidden cursor-pointer select-none"
+          [class.blur-effect]="isEMolaHovered"
+          (mouseenter)="isEMolaHovered = true"
+          (mouseleave)="isEMolaHovered = false"
+          (click)="toggleMethod('eMola')">
+
+          <!-- Imagem -->
+          <img
+            src="/assets/images/e-mola_logo.png"
+            alt="product"
+            class="w-full h-full object-cover rounded-md transition-all duration-300">
+
+          <!-- Overlay com ícone + ou x -->
+          <div
+            class="w-35 h-35 absolute inset-0 bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none"
+            [class.opacity-100]="isEMolaHovered">
+
+            <i
+              style="font-size: 2rem;"
+              class="pi"
+              [class.pi-plus]="!eMolaPriceEnabled"
+              [class.pi-times]="eMolaPriceEnabled">
+            </i>
+          </div>
+        </div>
+
+        <!-- Campo de preço (aparece só quando ativado) -->
+        <div #eMolaField
+          class="w-35 mt-3 transition-all duration-300"
+          [class.opacity-0]="!eMolaPriceEnabled"
+          [class.opacity-100]="eMolaPriceEnabled"
+          [class.h-0]="!eMolaPriceEnabled"
+          [class.h-auto]="eMolaPriceEnabled">
+
+          <p-floatlabel variant="on" class="w-full">
+            <p-iconfield>
+              <p-inputnumber
+                [readonly]="isEMolaReadonly"
+                [min]="0"
+                inputId="on_eMola"
+                autocomplete="off"
+                class="w-full"
+                [formControl]="eMolaPriceControl" />
+            </p-iconfield>
+            <label for="on_eMola">{{ 'DIALOGS.PAYMENT.AMOUNT' | translate }}</label>
+          </p-floatlabel>
+        </div>
+      </article>
+      <article class="relative inline-block">
+        <div
+          class="pos_img_btn w-35 h-35 flex flex-col gap-3 justify-center items-center rounded-md overflow-hidden cursor-pointer select-none"
+          [class.blur-effect]="isMPesaHovered"
+          (mouseenter)="isMPesaHovered = true"
+          (mouseleave)="isMPesaHovered = false"
+          (click)="toggleMethod('mPesa')">
+
+          <!-- Imagem -->
+          <img
+            src="/assets/images/m-pesa_logo.png"
+            alt="product"
+            class="w-full h-full object-cover rounded-md transition-all duration-300">
+
+          <!-- Overlay com ícone + ou x -->
+          <div
+            class="w-35 h-35 absolute inset-0 bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none"
+            [class.opacity-100]="isMPesaHovered">
+
+            <i
+              style="font-size: 2rem;"
+              class="pi"
+              [class.pi-plus]="!mPesaPriceEnabled"
+              [class.pi-times]="mPesaPriceEnabled">
+            </i>
+          </div>
+        </div>
+
+        <!-- Campo de preço (aparece só quando ativado) -->
+        <div #mPesaField
+          class="w-35 mt-3 transition-all duration-300"
+          [class.opacity-0]="!mPesaPriceEnabled"
+          [class.opacity-100]="mPesaPriceEnabled"
+          [class.h-0]="!mPesaPriceEnabled"
+          [class.h-auto]="mPesaPriceEnabled">
+
+          <p-floatlabel variant="on" class="w-full">
+            <p-iconfield>
+              <p-inputnumber
+                [readonly]="isMPesaReadonly"
+                [min]="0"
+                inputId="on_mPesa"
+                autocomplete="off"
+                class="w-full"
+                [formControl]="mPesaPriceControl" />
+            </p-iconfield>
+            <label for="on_mPesa">{{ 'DIALOGS.PAYMENT.AMOUNT' | translate }}</label>
+          </p-floatlabel>
+        </div>
+      </article>
+    </section>
+
+    <p-divider style="margin-top: 2rem; margin-bottom: 2rem;"/>
+
+    <div>
+      <span class="flex items-center justify-between">
+        <h2> {{ 'DIALOGS.PAYMENT.TOTAL' | translate }} </h2>
+        <h3>{{ formatPrice(totalAmount()) }}</h3>
+      </span>
+      <span class="flex items-center justify-between">
+        <h2> {{ 'DIALOGS.PAYMENT.PAID' | translate }} </h2>
+        <h3 class="text-green-600!">{{ formatPrice(totalPaid()) }}</h3>
+      </span>
+      <p-divider style="margin-top: 0.7rem; margin-bottom: 0.7rem;"/>
+      <span class="flex items-center justify-between">
+        <h2> {{ 'DIALOGS.PAYMENT.DUE' | translate }} </h2>
+        <h3  class="text-red-600!">{{ formatPrice(totalDue()) }}</h3>
+      </span>
+      <span class="flex items-center justify-between">
+        <h2> {{ 'DIALOGS.PAYMENT.CHANGE' | translate }} </h2>
+        <h3  class="text-yellow-600!">{{ formatPrice(totalChange()) }}</h3>
+      </span>
+    </div>
+  </form>
+  <ng-template #footer>
+    <div class="w-full grid gap-3">
+      <div class="w-full flex justify-between items-center">
+        <button pRipple type="button"
+          class="btn_cancel"
+          (click)="onCancel()"
+        >
+          {{ 'DIALOGS.ACTIONS.CANCEL' | translate }}
+        </button>
+
+        <button pRipple type="submit"
+          class="pos_place_order_btn"
+          [disabled]="showLoader"
+          (click)="onSubmit()"
+          [disabled]="(totalDue() > 0) || (cashPriceControl.value == 0) || (eMolaPriceControl.value == 0) || (mPesaPriceControl.value == 0)"
+        >
+          @if (showLoader) {
+            <div class="loader">
+              <span class="small_loader"></span>
+            </div>
+          }
+          @else {
+            {{ 'DIALOGS.ACTIONS.CONFIRM' | translate }}
+          }
+        </button>
+      </div>
+      <small class="w-full flex gap-1 justify-center items-center">
+        <i class="pi pi-shield" style="font-size: 0.7rem;"></i>
+        <span>{{ 'DIALOGS.PAYMENT.FOOTER' | translate }}</span>
+      </small>
+    </div>
+  </ng-template>
+</p-dialog>

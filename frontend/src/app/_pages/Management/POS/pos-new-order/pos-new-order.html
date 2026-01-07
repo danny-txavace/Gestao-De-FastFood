@@ -1,0 +1,82 @@
+<main class="w-full flex gap-8">
+  <section class="w-full grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <!--
+    @for (n of [1,2,3,4,5,6,7,8,9,10]; track n) {
+      <app-pos-products-card-content></app-pos-products-card-content>
+    }
+    -->
+    @for (product of products$ | async; track product.id) {
+      <app-pos-products-card-content
+        [productsData]="product"
+        [index]="$index"
+      >
+      </app-pos-products-card-content>
+    }
+  </section>
+  <section class="w-160">
+    <article class="w-full pos_default_card space-y-5">
+      <div>
+        <span class="flex items-center justify-between">
+          <h2>
+            {{ 'POS.NEW_ORDER.TOTAL_QUANTITY' | translate }}
+          </h2>
+          <h3>{{ formatQty(cartItemRepository.totalQuantity()) }}</h3>
+        </span>
+        <span class="flex items-center justify-between">
+          <h2>
+            {{ 'POS.NEW_ORDER.TOTAL_TO_PAY' | translate }}
+          </h2>
+          <h3>{{ formatPrice(cartItemRepository.totalAmount()) }}</h3>
+        </span>
+      </div>
+
+      <div class="w-full grid gap-2">
+        <button pRipple type="button"
+            class="pos_place_order_btn w-full flex items-center justify-center gap-2 min-h-13 text-lg!"
+            (click)="onPayNow()"
+            [disabled]="cartItemRepository.cartItems().length == 0"
+          >
+            <i class="pi pi-wallet"></i>
+            <span>{{ 'POS.NEW_ORDER.PAY_NOW' | translate }}</span>
+          </button>
+        <span class="w-full flex gap-2 items-center justify-between">
+          <button pRipple type="button"
+            class="btn_delete_normal min-h-13 text-lg!"
+            (click)="cartItemRepository.clear()"
+            [disabled]="cartItemRepository.cartItems().length == 0"
+          >
+            {{ 'POS.NEW_ORDER.CANCEL' | translate }}
+          </button>
+          <button pRipple type="button"
+            class="pos_place_order_btn w-full flex items-center justify-center gap-2 min-h-13 text-lg!"
+            (click)="onPlaceOrder()"
+            [disabled]="cartItemRepository.cartItems().length == 0"
+          >
+            <i class="pi pi-cart-arrow-down"></i>
+            <span>{{ 'POS.NEW_ORDER.PLACE_ORDER' | translate }}</span>
+          </button>
+        </span>
+      </div>
+    </article>
+    <article class="flex justify-between items-center mt-5">
+      <h2>{{ 'POS.NEW_ORDER.ORDER_NUMBER' | translate }}</h2>
+      <h2>{{ receiptNumber() }}</h2>
+    </article>
+    <p-divider style="margin-top: 0.5rem; margin-bottom: 0.5rem;"/>
+    <article class="w-full grid gap-3">
+      @for (item of cartItemRepository.cartItems(); track item.product.id) {
+        <app-pos-orders-card-content
+          [cartItem]="item"
+          (remove)="cartItemRepository.removeItem(item)"
+          (quantityChange)="cartItemRepository.updateQuantity(item, $event)"
+        >
+        </app-pos-orders-card-content>
+      }
+
+      @if (cartItemRepository.cartItems().length == 0)
+      {
+        <div class="text-center text-gray-500 mt-10">{{ 'POS.NEW_ORDER.NO_ITEMS_IN_CART' | translate }}</div>
+      }
+    </article>
+  </section>
+</main>

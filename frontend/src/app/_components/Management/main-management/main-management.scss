@@ -1,0 +1,14 @@
+.enter-animation {
+  animation: smooth-appear 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+@keyframes smooth-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

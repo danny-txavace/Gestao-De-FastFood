@@ -1,0 +1,162 @@
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '25rem' }"
+  position="top"
+>
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center">
+      <h2>{{ 'DIALOGS.PRODUCTS.UPDATE.TITLE' | translate }}</h2>
+    </div>
+  </ng-template>
+  <span class="login_subtitle block mb-5">{{ 'DIALOGS.PRODUCTS.UPDATE.INSTRUCTION' | translate }}</span>
+  <form
+    [formGroup]="form"
+    #productFormRef
+    class="my-1"
+  >
+    <div class="w-full flex flex-wrap justify-center items-center gap-3">
+      <div class="w-38 h-52 rounded-md">
+        @if(checkImageUrl)
+        {
+          <div class="bg-[#24704d] shadow-md w-full h-40 flex justify-center items-center rounded-md">
+            <img src="{{ imageUrl }}" alt="product" class="w-full h-full rounded-md">
+          </div>
+        }
+        @else
+        {
+          @if(initialLetter() === '')
+          {
+            <div class="bg-[#24704d] text-white text-[16pt] font-light shadow-md w-full h-40 p-5 text-center flex items-center rounded-md">
+              {{ noPhoto }}
+            </div>
+          }
+          @else
+          {
+            <div class="bg-[#536DFE] text-white text-[40pt] font-medium shadow-md w-full h-40 p-5 flex justify-center items-center rounded-md">
+              {{ initialLetter() }}
+            </div>
+          }
+        }
+
+        <div class="px-1 flex mt-2 items-center justify-between">
+          <button pRipple type="button"
+            (click)="deleteImage()"
+            class="btn_delete_icon"
+          >
+            <i
+              class="pi pi-trash"
+            ></i>
+          </button>
+          <span class="btn_only_icon">
+            <button pRipple type="button"
+              [disabled]="isUploading"
+              (click)="fileInput.click()"
+            >
+              @if (isUploading) {
+              <div class="loader">
+                <span class="small_loader"></span>
+              </div>
+              }
+              @else {
+                <i
+                  class="pi pi-camera"
+                ></i>
+              }
+            </button>
+          </span>
+        </div>
+
+        <input #fileInput
+          type="file"
+          accept="image/*"
+          hidden
+          (change)="onFileSelected($event)"
+        />
+      </div>
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-box" />
+          <input type="text" pInputText id="on_itemName"  autocomplete="off" formControlName="itemName" [ngClass]="{'invalid-input': isErrorItemName}"/>
+        </p-iconfield>
+        <label for="on_itemName">{{ 'DIALOGS.PRODUCTS.FIELDS.ITEM_NAME.LABEL' | translate }}</label>
+        @if (isErrorItemName) {
+          <small class="invalid-field">
+            {{ 'DIALOGS.PRODUCTS.FIELDS.ITEM_NAME.REQUIRED' | translate }}
+          </small>
+        }
+      </p-floatlabel>
+      @if (isErrorItemName) {
+        <div class="mb-1"></div>
+      }
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-money-bill" />
+          <p-inputnumber
+          [min]="0"
+          inputId="on_price"
+          autocomplete="off"
+          class="w-full"
+          formControlName="price"/>
+        </p-iconfield>
+        <label for="on_price">{{ 'DIALOGS.PRODUCTS.FIELDS.PRICE' | translate }}</label>
+      </p-floatlabel>
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-select
+            formControlName="category" inputId="on_category"
+            [options]="categoryOptions"
+            class="w-full"
+            appendTo="body"
+          />
+        </p-iconfield>
+          <label for="on_category">{{ 'DIALOGS.PRODUCTS.FIELDS.CATEGORY' | translate }}</label>
+      </p-floatlabel>
+
+      <div class="w-full grid justify-between items-center">
+        <span style="color: var(--label-color);">{{ 'DIALOGS.PRODUCTS.STATUS.LABEL' | translate }}</span>
+        <span class="flex flex-wrap gap-4">
+          <div class="flex items-center">
+              <p-radiobutton size="small" name="status" [value]="true" inputId="active" formControlName="status"/>
+              <label for="active" class="ml-2">{{ 'DIALOGS.PRODUCTS.STATUS.OPTIONS.ACTIVE' | translate }}</label>
+          </div>
+
+          <div class="flex items-center">
+            <p-radiobutton size="small" name="status" [value]="false" inputId="inactive" formControlName="status"/>
+            <label for="inactive" class="ml-2">{{ 'DIALOGS.PRODUCTS.STATUS.OPTIONS.INACTIVE' | translate }}</label>
+          </div>
+        </span>
+      </div>
+    </div>
+  </form>
+  <ng-template #footer>
+    <div class="mt-2 w-full flex justify-between items-center">
+      <button pRipple type="button"
+        class="btn_cancel"
+        (click)="visible = false"
+      >
+        {{ 'DIALOGS.PRODUCTS.ACTIONS.CANCEL' | translate }}
+      </button>
+
+      <span class="default_btn">
+        <button pRipple type="submit"
+          class="cursor-pointer"
+          [disabled]="showLoader"
+          (click)="onSubmit()"
+        >
+          @if (showLoader) {
+            <div class="loader">
+              <span class="small_loader"></span>
+            </div>
+          }
+          @else {
+            {{ 'DIALOGS.PRODUCTS.ACTIONS.CONFIRM' | translate }}
+          }
+        </button>
+      </span>
+    </div>
+  </ng-template>
+</p-dialog>

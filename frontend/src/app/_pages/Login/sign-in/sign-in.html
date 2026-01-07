@@ -1,0 +1,70 @@
+<div  animate.enter="enter-animation"
+  class="w-full flex justify-center items-top sm:mt-[5%]!"
+  >
+  <form class="login_card w-105 max-sm:w-full max-sm:shadow-none! max-sm:px-[10%]!"
+  [formGroup]="form" (ngSubmit)="onSignIn()">
+    <div class="mb-3 grid gap-8">
+      <h1>
+        {{ 'LOGIN.TITLE' | translate }}
+      </h1>
+      <p class="login_subtitle">
+        {{ 'LOGIN.SUBTITLE' | translate }}
+      </p>
+    </div>
+
+    <div class="w-full flex flex-wrap justify-center items-end gap-3">
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-user" />
+          <input type="text" pInputText id="login_user"  autocomplete="off" formControlName="username" [ngClass]="{'invalid-input': isUserError}"/>
+        </p-iconfield>
+          <label for="login_username">{{ 'LOGIN.USERNAME' | translate }}</label>
+          @if (isUserError) {
+            <small class="invalid-field">
+              {{ 'LOGIN.ERROR.USERNAME' | translate }}
+            </small>
+          }
+      </p-floatlabel>
+      @if (isUserError) {
+        <div class="mb-1"></div>
+      }
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-lock" />
+          <input type="{{ isPasswordVisible ? 'text' : 'password' }}" pInputText id="on_password" autocomplete="off" formControlName="password" [ngClass]="{'invalid-input': isPassError}"/>
+          <p-inputicon
+            class="password-icon"
+            [ngClass]="isPasswordVisible ? 'pi pi-eye-slash' : 'pi pi-eye'"
+            [pTooltip]="passwordTooltip"
+            tooltipPosition="bottom"
+            (click)="togglePassword()"
+          ></p-inputicon>
+        </p-iconfield>
+          <label for="on_password">{{ 'LOGIN.PASSWORD' | translate }}</label>
+          @if (isPassError) {
+            <small class="invalid-field">
+              {{ 'LOGIN.ERROR.PASSWORD' | translate }}
+            </small>
+          }
+      </p-floatlabel>
+      @if (isPassError) {
+        <div class="mb-1"></div>
+      }
+    </div>
+
+    <div class="my-6"></div>
+    <button pRipple type="submit"
+      class="w-full cursor-pointer"
+      >
+      @if (showLoader) {
+        <div class="loader">
+          <span class="small_loader"></span>
+        </div>
+      }
+      @else {
+        {{ 'LOGIN.SIGN_IN' | translate }}
+      }
+    </button>
+  </form>
+</div>

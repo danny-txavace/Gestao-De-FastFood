@@ -1,0 +1,89 @@
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '25rem' }"
+  position="top"
+>
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center">
+      <h2>{{ title() }}</h2>
+    </div>
+  </ng-template>
+  <span class="login_subtitle block mb-5">{{ info() }}</span>
+  <form
+    [formGroup]="form"
+    class="my-1"
+  >
+    <div class="w-full flex flex-wrap justify-center items-center gap-3">
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-select
+            formControlName="cashRegisterId"
+            inputId="on_id"
+            [options]="usersOptions"
+            optionLabel="username"
+            optionValue="id"
+            class="w-full"
+            appendTo="body"
+            [filter]="false"
+            filterBy="username"
+          />
+        </p-iconfield>
+          <label for="on_id">{{ 'DIALOGS.USER_SELECTION' | translate }}</label>
+      </p-floatlabel>
+
+      <p-floatlabel variant="on" class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-money-bill" />
+          <p-inputnumber
+          [min]="0"
+          inputId="on_amount"
+          autocomplete="off"
+          class="w-full"
+          formControlName="amount"/>
+        </p-iconfield>
+        <label for="on_amount">{{ amount() }}</label>
+      </p-floatlabel>
+
+      <p-floatlabel variant="on" class="w-full">
+        <textarea
+          pTextarea
+          id="on_description"
+          formControlName="description"
+          rows="5" cols="30"
+          [placeholder]="descrp_plh()"
+          style="resize: none; --p-textarea-background: transparent; --p-textarea-border-color: var(--border-color)"
+          class="w-full h-full"
+          ></textarea>
+        <label for="on_description">{{ descrp_lbl() }}</label>
+      </p-floatlabel>
+    </div>
+  </form>
+  <ng-template #footer>
+    <div class="mt-2 w-full flex justify-between items-center">
+      <button pRipple type="button"
+        class="btn_cancel"
+        (click)="visible = false"
+      >
+        {{ 'DIALOGS.ACTIONS.CANCEL' | translate }}
+      </button>
+
+      <span class="default_btn">
+        <button pRipple type="submit"
+          class="cursor-pointer"
+          [disabled]="showLoader"
+          (click)="onSubmit()"
+        >
+          @if (showLoader) {
+            <div class="loader">
+              <span class="small_loader"></span>
+            </div>
+          }
+          @else {
+            {{ 'DIALOGS.ACTIONS.CONFIRM' | translate }}
+          }
+        </button>
+      </span>
+    </div>
+  </ng-template>
+</p-dialog>

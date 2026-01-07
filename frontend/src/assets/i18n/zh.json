@@ -1,0 +1,518 @@
+{
+  "APP_NAME": "Tio Laice 管理后台",
+  "LOADER": "正在加载数据，请稍候",
+  "FOOTER": "© 2025，Tio Laice 管理后台 · 由 Ramadan 技术驱动 · 保留所有权利。",
+  "NOT_FOUND": {
+    "TITLE": "页面未找到",
+    "MESSAGE": "抱歉，您要找的页面不存在，可能已被移动或删除。"
+  },
+  "LOGIN": {
+    "TITLE": "欢迎回来！",
+    "SUBTITLE": "请输入您的账号密码登录系统",
+    "USERNAME": "用户名",
+    "PASSWORD": "密码",
+    "SIGN_IN": "登录",
+    "TOOLTIP": {
+      "SHOW_PASSWORD": "显示密码",
+      "HIDE_PASSWORD": "隐藏密码"
+    },
+    "ERROR": {
+      "USERNAME": "请输入用户名",
+      "PASSWORD": "请输入密码"
+    }
+  },
+  "MANAGEMENT_NAVBAR": {
+    "DASHBOARD": "仪表盘",
+    "POS": "收银",
+    "POINT_OF_SALE": "销售点",
+    "CASH_REGISTER": "收银台",
+    "ORDERS_LIST": "订单列表",
+    "ORDERS_LISTS": "订单",
+    "REPORT": "报表",
+    "MENU": "菜单",
+    "INGREDIENTS": "原料",
+    "SYSTEM_USERS": "系统用户",
+    "THEME": {
+      "TITLE": "外观",
+      "DARK": "深色模式",
+      "LIGHT": "浅色模式"
+    },
+    "LANGUAGE": {
+      "TITLE": "语言",
+      "ABBREVIATION": "中",
+      "FULL_NAME": "简体中文",
+      "OPTIONS": {
+        "EN": "英语",
+        "ES": "西班牙语",
+        "PT": "葡萄牙语",
+        "ZH": "简体中文"
+      }
+    },
+    "SIGN_OUT": "退出登录"
+  },
+  "DASHBOARD": {
+    "INFO_GREETING": "老板，欢迎回来！今天也要大杀四方！",
+    "INFO2_GREETING": "把每一个机会都变成利润…🔥"
+  },
+  "POS": {
+    "CLOSED": {
+      "SYSTEM_ADMINISTRATOR": "系统管理员",
+      "HELLO": "您好",
+      "GLAD_TO_SEE_YOU_BACK": "很高兴再次见到您…",
+      "LETS_OPEN_CASH_REGISTER": "一起开钱箱，开启充满活力的一天吧",
+      "CASH_REGISTER_CLOSED": "钱箱已关闭",
+      "CASH_REGISTER_NOT_OPENED": "今天的钱箱尚未开启",
+      "TO_START_SALES": "要开始销售，请点击下方按钮",
+      "OPEN_CASH_REGISTER_NOW": "立即开启钱箱",
+      "USER_CASHIER": "收银员",
+      "USER_CASH_REGISTER_OPEN": "钱箱已开",
+      "USER_CASH_REGISTER_CLOSED": "钱箱已关",
+      "DATE_FORMAT_LONG": "yyyy年MM月dd日 EEEE"
+    },
+    "NEW_ORDER": {
+      "TITLE": "新订单",
+      "TOTAL_QUANTITY": "总数量",
+      "TOTAL_TO_PAY": "应付总额",
+      "PAY_NOW": "立即支付",
+      "CANCEL": "取消",
+      "PLACE_ORDER": "下单",
+      "ORDER_NUMBER": "订单号#",
+      "NO_ITEMS_IN_CART": "购物车为空",
+      "QUANTITY": "数量",
+      "AVAILABLE": "有货",
+      "UNAVAILABLE": "缺货",
+      "ADD_TO_CART": "加入购物车"
+    },
+    "ORDERS_LIST": {
+      "TITLE": "订单列表"
+    },
+    "CASH_MOVEMENTS": {
+      "TITLE": "现金流动",
+      "TODAY_SUMMARY": "今天的情况如下：",
+      "INITIAL_BALANCE": "开箱金额",
+      "TOTAL_INCOMES": "总收入",
+      "TOTAL_EXPENSES": "总支出",
+      "EXPECTED_TOTAL": "预期结余",
+      "CLOSE_CASH_REGISTER": "关闭钱箱",
+      "CASH_REINFORCEMENT": "现金补款",
+      "CASH_WITHDRAWAL": "现金提款"
+    }
+  },
+  "INGREDIENTS": {
+    "TOTAL_ITEMS": "在用原料",
+    "TOTAL_ACTIVE_QTY": "可用库存",
+    "TOTAL_INACTIVE_QTY": "停用原料",
+    "NEAR_EXPIRY": "即将过期",
+    "EXPIRED": "已过期",
+    "ADD_NEW_INGREDIENT": "新增原料"
+  },
+  "PRODUCTS": {
+    "ADD_NEW_ITEM": "新增菜品"
+  },
+  "CASH_REGISTER": {
+    "TODAY_SUMMARY": "今天的情况如下：",
+    "INITIAL_BALANCE": "开箱金额",
+    "TOTAL_INCOMES": "总收入",
+    "TOTAL_EXPENSES": "总支出",
+    "EXPECTED_TOTAL": "预期结余",
+    "OPEN_CASH_REGISTER": "开启钱箱",
+    "CLOSE_CASH_REGISTER": "关闭钱箱",
+    "CASH_REINFORCEMENT": "现金补款",
+    "CASH_WITHDRAWAL": "现金提款"
+  },
+  "REPORT": {
+    "YESTERDAY": "昨天",
+    "TODAY": "今天",
+    "DATE_RANGE": "选择期间",
+    "OPENING_BALANCE": "期初金额",
+    "INFLOWS": "收入",
+    "OUTFLOWS": "支出",
+    "PAYMENT_METHODS": "支付方式",
+    "CLOSING_BALANCE": "期末金额",
+    "NUMBER_OF_SALES": "销售笔数",
+    "EXPECTED_BALANCE": "预期结余",
+    "AVERAGE_TICKET": "平均客单",
+    "SALES_PER_HOUR": "时段销售",
+    "CASH_MOVEMENTS": "现金流动",
+    "SALES_BREAKDOWN": "销售明细",
+    "RECENT_SALES": "近期销售",
+    "LATEST_TRANSACTIONS": "最新交易",
+    "NO_SALES": "未找到近期销售",
+    "CASH": "现金"
+  },
+  "SYSTEM_USERS": {
+    "ADD_NEW_USER": "新增用户"
+  },
+  "COMMON": {
+    "SEARCH": "搜索",
+    "UNIT_OF_MEASURE": {
+      "UNIT": "个",
+      "BOTTLE": "瓶",
+      "DOZEN": "打",
+      "GRAM": "克(g)",
+      "KILOGRAM": "千克(kg)",
+      "MILLIGRAM": "毫克(mg)",
+      "MILLILITER": "毫升(ml)",
+      "LITER": "升(L)",
+      "OTHER": "其他"
+    },
+    "CARD": {
+      "COMPARED_TO_YESTERDAY": "较昨天",
+      "COMPARED_TO_DAY_BEFORE_YESTERDAY": "较前天",
+      "COMPARED_TO_LAST_MONTH": "较上月",
+      "COMPARED_TO_LAST_WEEK": "较上周",
+      "COMPARED_TO_WEEK_BEFORE_LAST": "较前周",
+      "COMPARED_TO_MONTH_BEFORE_LAST": "较上上月",
+      "COMPARED_TO_LAST": "较上一期",
+      "LAST_UPDATED": "最后更新"
+    },
+    "TABLE": {
+      "NO_ROWS_TO_SHOWS": "暂无数据记录…",
+      "SHOWING": "显示",
+      "TO": "至",
+      "OF": "共",
+      "ENTRIES": "条记录"
+    },
+    "CALENDAR": {
+      "TODAY": "今天",
+      "CLEAR": "清空",
+      "DATE_FORMAT": "dd/mm/yy",
+      "WEEK_HEADER": "周",
+      "DAY_NAMES": {
+        "FULL": {
+          "SUNDAY": "星期日",
+          "MONDAY": "星期一",
+          "TUESDAY": "星期二",
+          "WEDNESDAY": "星期三",
+          "THURSDAY": "星期四",
+          "FRIDAY": "星期五",
+          "SATURDAY": "星期六"
+        },
+        "SHORT": {
+          "SUNDAY": "日",
+          "MONDAY": "一",
+          "TUESDAY": "二",
+          "WEDNESDAY": "三",
+          "THURSDAY": "四",
+          "FRIDAY": "五",
+          "SATURDAY": "六"
+        },
+        "MIN": {
+          "SUNDAY": "日",
+          "MONDAY": "一",
+          "TUESDAY": "二",
+          "WEDNESDAY": "三",
+          "THURSDAY": "四",
+          "FRIDAY": "五",
+          "SATURDAY": "六"
+        }
+      },
+      "MONTH_NAMES": {
+        "FULL": {
+          "JANUARY": "一月",
+          "FEBRUARY": "二月",
+          "MARCH": "三月",
+          "APRIL": "四月",
+          "MAY": "五月",
+          "JUNE": "六月",
+          "JULY": "七月",
+          "AUGUST": "八月",
+          "SEPTEMBER": "九月",
+          "OCTOBER": "十月",
+          "NOVEMBER": "十一月",
+          "DECEMBER": "十二月"
+        },
+        "SHORT": {
+          "JANUARY": "1月",
+          "FEBRUARY": "2月",
+          "MARCH": "3月",
+          "APRIL": "4月",
+          "MAY": "5月",
+          "JUNE": "6月",
+          "JULY": "7月",
+          "AUGUST": "8月",
+          "SEPTEMBER": "9月",
+          "OCTOBER": "10月",
+          "NOVEMBER": "11月",
+          "DECEMBER": "12月"
+        }
+      }
+    },
+    "CHART": {
+      "PROFIT_LOSS": "盈亏",
+      "REVENUE": "收入",
+      "EXPENSE": "支出",
+      "AREA": {
+        "REVENUE_EXPENSE": "收入 vs 支出",
+        "FILE_NAME": "图表-收入支出对比",
+        "DOWNLOAD": "下载",
+        "RESET": "重置"
+      }
+    }
+  },
+  "DIALOGS": {
+    "OPERATOR": "操作员",
+    "INSTRUCTION": "请填写表单以完成关钱箱操作",
+    "CLOSE_CASH_REGISTER": "钱箱关闭",
+    "INITIAL_BALANCE": "开箱金额",
+    "TOTAL_INCOMES": "总收入",
+    "TOTAL_EXPENSES": "总支出",
+    "EXPECTED_TOTAL": "预期结余",
+    "USER_SELECTION": "选择用户",
+    "CASH_AMOUNT": "实际点钞金额",
+    "ACTIONS": {
+      "CANCEL": "取消",
+      "CONFIRM": "确认"
+    },
+    "CASH_ADJUSTMENTS": {
+      "REINFORCEMENT": {
+        "TITLE": "现金补款",
+        "INFO": "向钱箱补充现金，确保有足够的备用金或可用余额",
+        "AMOUNT": "补款金额",
+        "DESCRIPTION": {
+          "LABEL": "说明",
+          "PLACEHOLDER": "可选：说明补款用途"
+        }
+      },
+      "WITHDRAWAL": {
+        "TITLE": "现金提款",
+        "INFO": "从钱箱取出现金，用于安全存放、银行存款或支付即时费用",
+        "AMOUNT": "提款金额",
+        "DESCRIPTION": {
+          "LABEL": "说明",
+          "PLACEHOLDER": "可选：说明提款用途"
+        }
+      }
+    },
+    "OPEN_CASH": {
+      "TITLE": "开启钱箱",
+      "INFO": "请输入开班金额开始本班次",
+      "AMOUNT": "开箱金额"
+    },
+    "DELETE": {
+      "TITLE": "删除",
+      "INFO_0": "确定要删除这条记录吗？",
+      "INFO_1": "此操作不可恢复",
+      "INFO_2": "如果确定请点击“删除”",
+      "ACTIONS": {
+        "CANCEL": "取消",
+        "CONFIRM": "删除"
+      }
+    },
+    "INGREDIENTS": {
+      "TITLE": "原料管理",
+      "SELECT_INGREDIENT": "选择原料",
+      "ADD_NEW": {
+        "BTN": "新增原料",
+        "TITLE": "新增原料",
+        "INSTRUCTION": "请填写表单注册新原料"
+      },
+      "UPDATE": {
+        "TITLE": "编辑原料",
+        "INSTRUCTION": "填写表单更新原料信息",
+        "STATUS": {
+          "LABEL": "状态",
+          "OPTIONS": {
+            "ACTIVE": "启用",
+            "INACTIVE": "停用"
+          }
+        }
+      },
+      "FIELDS": {
+        "ITEM_NAME": {
+          "LABEL": "原料名称",
+          "REQUIRED": "原料名称必填"
+        },
+        "BATCH_NUMBER": "批次编号",
+        "PACKAGE_SIZE": "包装规格",
+        "UNIT_OF_MEASURE": "单位",
+        "QUANTITY": "数量",
+        "UNIT_COST_PRICE": "单位成本价",
+        "EXPIRATION_AT": "到期日期"
+      },
+      "ACTIONS": {
+        "CANCEL": "取消",
+        "CONFIRM": "保存"
+      }
+    },
+    "CUSTOMER": {
+      "TITLE": "新增客户",
+      "INFO": "填写客户信息。如不填写姓名，将记录为“散客”",
+      "FIELDS": {
+        "NAME": "姓名",
+        "PHONE": "手机号"
+      }
+    },
+    "PAYMENT": {
+      "TITLE": "支付",
+      "CUSTOMER": "散客",
+      "INFO": "请核对金额并完成支付 😊",
+      "SELECT_METHOD": "选择支付方式",
+      "AMOUNT": "应付金额",
+      "TOTAL": "总计",
+      "PAID": "已付",
+      "DUE": "欠款",
+      "CHANGE": "找零",
+      "FOOTER": "交易安全有保障！"
+    },
+    "PRODUCTS": {
+      "ADD_NEW": {
+        "TITLE": "新增菜品/商品",
+        "INSTRUCTION": "注册新的菜单项目"
+      },
+      "UPDATE": {
+        "TITLE": "编辑菜品/商品",
+        "INSTRUCTION": "更新菜单项目信息",
+        "STATUS": {
+          "LABEL": "状态",
+          "OPTIONS": {
+            "ACTIVE": "上架",
+            "INACTIVE": "下架"
+          }
+        }
+      },
+      "FIELDS": {
+        "ITEM_NAME": {
+          "LABEL": "商品名称",
+          "REQUIRED": "商品名称必填"
+        },
+        "PRICE": "售价",
+        "CATEGORY": "分类"
+      },
+      "ACTIONS": {
+        "CANCEL": "取消",
+        "CONFIRM": "保存"
+      }
+    },
+    "USERS": {
+      "ADD_NEW": {
+        "TITLE": "新增用户",
+        "INSTRUCTION": "填写表单注册新用户。<br>初始密码为 <strong>123456</strong>，建议首次登录后立即修改。"
+      },
+      "UPDATE": {
+        "TITLE": "编辑用户",
+        "INSTRUCTION": "修改后点击保存",
+        "STATUS": {
+          "LABEL": "状态",
+          "OPTIONS": {
+            "ACTIVE": "启用",
+            "INACTIVE": "禁用"
+          }
+        },
+        "NEW_PASSWORD": "新密码",
+        "NEW_PASSWORD_TOO_SHORT": "新密码至少6位",
+        "CONFIRM_NEW_PASSWORD": "确认新密码",
+        "CONFIRM_PASSWORD_TOO_SHORT": "确认密码至少6位",
+        "PASSWORDS_DO_NOT_MATCH": "两次输入的密码不一致",
+        "ROLE": {
+          "LABEL": "角色",
+          "OPTIONS": {
+            "ADMIN": "管理员",
+            "USER": "操作员"
+          }
+        }
+      },
+      "FIELDS": {
+        "USERNAME": "用户名",
+        "REQUIRED": "用户名必填",
+        "PHONE": "手机号"
+      },
+      "ACTIONS": {
+        "CANCEL": "取消",
+        "CONFIRM": "保存"
+      }
+    }
+  },
+  "TABLE_HEADER": {
+    "ACTIONS": "操作",
+    "TOTAL": "合计",
+    "TOTALS": "总计",
+    "OPERATOR": "操作员",
+    "ITEM_NAME": "商品名称",
+    "QTY": "数量",
+    "TOTAL_AMOUNT": "总金额(MT)",
+    "PAID_AMOUNT": "已付(MT)",
+    "CHANGE": "找零(MT)",
+    "AMOUNT_MT": "金额(MT)",
+    "DESCRIPTION": "备注",
+    "LAST_UPDATE": "更新时间",
+    "CREATED_AT": "创建时间",
+    "DATE_TIME": "日期时间",
+    "CUSTOMER_NAME": "客户姓名",
+    "CUSTOMER_PHONE": "手机号",
+    "BATCH_NUMBER": "批次",
+    "PACKAGE_SIZE": "包装规格",
+    "UNIT_OF_MEASURE": "单位",
+    "EXPIRATION_AT": "到期日",
+    "UNIT_PRICE": "单价(MT)",
+    "TOTAL_PRICE": "总价(MT)",
+    "IMAGE": "图片",
+    "PRICE": "售价(MT)",
+    "CATEGORY": "分类",
+    "TOTAL_OPEN": "开箱总额(MT)",
+    "TOTAL_CLOSED": "关箱总额(MT)",
+    "OPENED_AT": "开启时间",
+    "CLOSED_AT": "关闭时间",
+    "USERNAME": "用户名",
+    "ROLE": "角色",
+    "TYPE": {
+      "TITLE": "类型",
+      "OPTIONS": {
+        "OPENED": "开箱",
+        "CLOSED": "关箱",
+        "REINFORCEMENT": "补款",
+        "WITHDRAWAL": "提款"
+      }
+    },
+    "STATUS": {
+      "TITLE": "状态",
+      "OPTIONS": {
+        "CONFIRMED": "已确认",
+        "CANCELLED": "已取消",
+        "PENDING": "待处理",
+        "PAID": "已支付",
+        "ACTIVE": "启用",
+        "INACTIVE": "禁用",
+        "OPENED": "已开",
+        "CLOSED": "已关"
+      }
+    },
+    "EXPIRY_STATUS": {
+      "TITLE": "到期状态",
+      "OPTIONS": {
+        "VALID": "正常",
+        "NEAR_EXPIRY": "即将过期",
+        "EXPIRED": "已过期"
+      }
+    }
+  },
+  "ERRORS": {
+    "UNEXPECTED_ERROR": "发生未知错误，请重试",
+    "REQUEST_FAILED": "连接失败，请重试",
+    "REQUIRED_FIELDS": "请填写所有必填项",
+    "HINT": "请选择当前值班人员",
+    "IMAGE_READ_ERROR": "读取图片出错",
+    "SELECT_VALID_IMAGE": "请选择有效的图片",
+    "POS_LOAD_ERROR": "加载收银页面失败",
+    "SAVE_ERROR": "保存数据失败",
+    "CLEAR_ERROR": "清除数据失败"
+  },
+  "SERVER_MESSAGES": {
+    "RECORD_SAVED_SUCCESS": "记录保存成功！👍",
+    "RECORD_CREATED_SUCCESS": "记录创建成功！🎉",
+    "RECORD_UPDATED_SUCCESS": "记录更新成功！✅",
+    "RECORD_DELETED_SUCCESS": "记录删除成功！🗑️",
+    "RECORD_ALREADY_EXISTS": "抱歉，此记录已存在",
+    "RECORD_NOT_FOUND": "未找到相关记录",
+    "NO_CHANGES_DETECTED": "未检测到任何修改",
+    "CORRECT_HIGHLIGHTED_ERRORS": "请修正标红的错误后重试",
+    "OPERATION_FAILED": "操作失败，请重试",
+    "CASH_REGISTER_OPENED": "钱箱已开启，可以开始销售了！",
+    "CASH_REGISTER_ALREADY_OPEN": "已有一个开启中的钱箱，请先关闭后再开启新的",
+    "CASH_REGISTER_CLOSED": "钱箱关闭成功，感谢您本班次的工作！",
+    "UNEXPECTED_ERROR": "哎呀！发生了未知错误",
+    "UNAUTHORISED_ACTION": "您没有权限执行此操作",
+    "ACCESS_FORBIDDEN": "禁止访问此资源",
+    "INSUFFICIENT_INGREDIENT": "原料库存不足，无法制作该商品"
+  }
+}

@@ -1,0 +1,6 @@
+/* Target specifically this inputNumber or use a custom class */
+:host ::ng-deep .p-inputnumber-horizontal-centered .p-inputnumber-input {
+    text-align: center !important;
+    height: 2rem !important;
+    width: 3rem !important;
+}

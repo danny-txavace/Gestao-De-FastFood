@@ -1,0 +1,49 @@
+<article class="default_card relative flex flex-col h-85 bg-white rounded-lg shadow-md overflow-hidden">
+  @if (productsData.isActive)
+  {
+    <div class="absolute right-4 top-4 z-10 flex items-center gap-2 bg-green-100 text-green-800 py-1 px-3 rounded-full text-xs font-medium">
+      <span class="block h-2 w-2 rounded-full bg-green-500"></span>
+      {{ 'POS.NEW_ORDER.AVAILABLE' | translate }}
+    </div>
+  }
+  @else
+  {
+    <div class="absolute right-4 top-4 z-10 flex items-center gap-2 bg-red-100 text-red-800 py-1 px-3 rounded-full text-xs font-medium">
+      <span class="block h-2 w-2 rounded-full bg-red-500"></span>
+      {{ 'POS.NEW_ORDER.UNAVAILABLE' | translate }}
+    </div>
+  }
+
+  @if (productsData.imageUrl) {
+    <img [src]="productsData.imageUrl"
+         [alt]="productsData.itemName"
+         class="w-full h-48 object-cover rounded-lg">
+  } @else {
+    <div class="w-full h-48 bg-[#206444] flex items-center justify-center text-white text-6xl font-light rounded-lg">
+      {{ productsData.itemName.trim().charAt(0).toUpperCase() }}
+    </div>
+  }
+
+  <div class="px-4 flex flex-col flex-1">
+    <h5 class="truncate">{{ productsData.itemName }}</h5>
+    <small class="text-left text-gray-500">{{ productsData.category }}</small>
+
+    <h2 class="text-right! text-2xl">
+      {{ formatPrice(productsData.price) }}
+    </h2>
+
+    <div class="mt-auto default_btn">
+      <button
+        pButton
+        pRipple
+        type="button"
+        class="w-full flex items-center justify-center gap-2"
+        [disabled]="!productsData.isActive"
+        (click)="addToCart()"
+      >
+        <i class="pi pi-plus" style="font-size: 0.7rem;"></i>
+        <span>{{ 'POS.NEW_ORDER.ADD_TO_CART' | translate }}</span>
+      </button>
+    </div>
+  </div>
+</article>

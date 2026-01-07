@@ -1,0 +1,90 @@
+@if (authService.receiveSession().roles === 'admin')
+{
+  @if (loading())
+  {
+    <div class="loader w-full h-100 flex justify-center items-center">
+      <span class="card_loader"></span>
+    </div>
+  }
+  @else
+  {
+    @switch (pos_status())
+    {
+      @case (true)
+      {
+        @if (pos_userId() === authService.receiveSession().id)
+        {
+          <section class="w-full mt-3 space-y-3">
+            <article>
+              <p-tabs value="NewOrder">
+                <p-tablist>
+                  <p-tab value="NewOrder"
+                    [routerLink]="[{ outlets: { 'pos-outlet': ['pos-new_order'] } }]"
+                    class="flex items-center !gap-2 text-inherit"
+                  >
+                    <i class="pi pi-cart-plus"></i>
+                    <span>{{ 'POS.NEW_ORDER.TITLE' | translate }}</span>
+                  </p-tab>
+                  <p-tab value="OrderList"
+                    [routerLink]="[{ outlets: { 'pos-outlet': ['pos-order_list'] } }]"
+                    class="flex items-center !gap-2 text-inherit"
+                  >
+                    <i class="pi pi-list"></i>
+                    <span>{{ 'POS.ORDERS_LIST.TITLE' | translate }}</span>
+                  </p-tab>
+                  <p-tab value="CashMovements"
+                    [routerLink]="[{ outlets: { 'pos-outlet': ['pos-cash_movements'] } }]"
+                    class="flex items-center !gap-2 text-inherit"
+                  >
+                    <i class="pi pi-inbox"></i>
+                    <span>{{ 'POS.CASH_MOVEMENTS.TITLE' | translate }}</span>
+                  </p-tab>
+                </p-tablist>
+              </p-tabs>
+            </article>
+            <article class="mt-2">
+              <router-outlet name="pos-outlet"></router-outlet>
+            </article>
+          </section>
+        }
+      }
+      @case(false)
+      {
+        <section class="w-full mt-3 flex justify-center items-center">
+          <article class="pos_initial_card">
+            <div class="w-full p-10 flex flex-col gap-7 justify-center items-center">
+              <div class="w-full flex flex-col gap-1 justify-center items-center">
+                <span class="flex justify-center items-center bg-[#24704D] text-[#FFFFFF] text-[5rem] font-light w-35 h-35 rounded-full">
+                  {{ authService.receiveSession().username.charAt(0).toUpperCase() }}
+                </span>
+                <small>{{ 'POS.CLOSED.SYSTEM_ADMINISTRATOR' | translate }}</small>
+              </div>
+              <span class="w-full flex flex-col justify-center items-center">
+                <h1>{{ 'POS.CLOSED.HELLO' | translate }}, {{ authService.receiveSession().username.toUpperCase() }}!</h1>
+                <h5>{{ 'POS.CLOSED.GLAD_TO_SEE_YOU_BACK' | translate }}</h5>
+                <h5>{{ 'POS.CLOSED.LETS_OPEN_CASH_REGISTER' | translate }}</h5>
+              </span>
+
+              <span class="pos_cash_closed">
+                <h2>{{ 'POS.CLOSED.CASH_REGISTER_CLOSED' | translate }}</h2>
+              </span>
+
+              <div class="pos_initial_card">
+                <p>{{ 'POS.CLOSED.CASH_REGISTER_NOT_OPENED' | translate }}</p>
+                <p>{{ 'POS.CLOSED.TO_START_SALES' | translate }}</p>
+              </div>
+
+              <button pRipple class="btn-open" (click)="onDialogOpenCash()">
+                {{ 'POS.CLOSED.OPEN_CASH_REGISTER_NOW' | translate }}
+              </button>
+            </div>
+          </article>
+        </section>
+      }
+    }
+  }
+}
+@else
+{
+  <p>Roles not found</p>
+}

@@ -1,0 +1,164 @@
+@if (authService.receiveSession().roles === 'user')
+{
+  <nav class="bg-gradient-to-r from-green-500 via-teal-500 to-blue-500 text-white px-6 py-4 shadow-2xl">
+    <section class="flex items-center justify-between">
+      <article class="flex items-center gap-6">
+        <div class="flex items-center gap-3">
+          <span class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+            <i class="pi pi-shop" style="font-size: 1.6rem;"></i>
+          </span>
+          <span>
+            <h1 class="text-white! text-left!">{{ 'APP_NAME' | translate }}</h1>
+            <p class="text-blue-100 text-left!">{{ currentDate | date:('POS.CLOSED.DATE_FORMAT_LONG' | translate) }}</p>
+          </span>
+        </div>
+
+        <div class="h-10 w-px bg-white/30"></div>
+
+        <div>
+          <span class="flex items-center gap-2">
+            <i class="pi pi-user" style="font-size: 1.2rem;"></i>
+            <span>{{ authService.receiveSession().username.toUpperCase() }}</span>
+          </span>
+          <p class="text-blue-100">{{ 'POS.CLOSED.USER_CASHIER' | translate }}</p>
+        </div>
+      </article>
+
+      <article class="flex items-center gap-6">
+        <div class="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-xl">
+          <i class="pi pi-wallet" style="font-size: 1.2rem;"></i>
+          <span>
+            @switch (pos_status())
+            {
+              @case (true)
+              {
+                <p class="text-blue-100">{{ 'POS.CLOSED.USER_CASH_REGISTER_OPEN' | translate }}</p>
+                <p class="text-white text-right" #countUpAmount>0,00</p>
+              }
+              @case(false)
+              {
+                <p class="text-blue-100">{{ 'POS.CLOSED.USER_CASH_REGISTER_CLOSED' | translate }}</p>
+                <p class="text-white text-right">--</p>
+              }
+            }
+          </span>
+        </div>
+
+        <div class="flex gap-1">
+          <button pRipple
+            class="bg-white/20 backdrop-blur-sm px-3 p-2 rounded-xl cursor-pointer
+                hover:bg-gradient-to-r hover:from-emerald-100/40 hover:to-blue-500/40
+                hover:text-white hover:shadow-xl transition"
+            (click)="toggleTheme()"
+          >
+            <i class="pi" [ngClass]="isDark ? 'pi-sun' : 'pi-moon'"></i>
+          </button>
+          <button pRipple
+            class="bg-white/20 backdrop-blur-sm px-3 p-2 rounded-xl cursor-pointer
+                hover:bg-gradient-to-r hover:from-emerald-100/40 hover:to-blue-500/40
+                hover:text-white hover:shadow-xl transition"
+            (click)="toggleLang()" type="button"
+          >
+              {{ 'MANAGEMENT_NAVBAR.LANGUAGE.ABBREVIATION' | translate }}
+          </button>
+        </div>
+        <button pRipple
+          class="bg-white/20 backdrop-blur-sm px-3 p-2 rounded-xl cursor-pointer
+                hover:bg-gradient-to-r hover:from-emerald-100/40 hover:to-blue-500/40
+                hover:text-white hover:shadow-xl transition"
+          (click)="onSignOut()"
+        >
+          <i class="pi pi-sign-out"></i>
+        </button>
+      </article>
+    </section>
+  </nav>
+  @if (loading())
+  {
+    <div class="loader w-full h-100 flex justify-center items-center">
+      <span class="card_loader"></span>
+    </div>
+  }
+  @else
+  {
+    <main>
+      @switch (pos_status())
+      {
+        @case (true)
+        {
+          @if (pos_userId() === authService.receiveSession().id)
+          {}
+          <section class="w-full">
+            <article>
+              <p-tabs value="NewOrder">
+                <p-tablist>
+                  <p-tab value="NewOrder"
+                    [routerLink]="[{ outlets: { 'pos-user_outlet': ['pos-new_order'] } }]"
+                    class="flex items-center !gap-2 text-inherit"
+                  >
+                    <i class="pi pi-cart-plus"></i>
+                    <span>{{ 'POS.NEW_ORDER.TITLE' | translate }}</span>
+                  </p-tab>
+                  <p-tab value="OrderList"
+                    [routerLink]="[{ outlets: { 'pos-user_outlet': ['pos-order_list'] } }]"
+                    class="flex items-center !gap-2 text-inherit"
+                  >
+                    <i class="pi pi-list"></i>
+                    <span>{{ 'POS.ORDERS_LIST.TITLE' | translate }}</span>
+                  </p-tab>
+                  <p-tab value="CashMovements"
+                    [routerLink]="[{ outlets: { 'pos-user_outlet': ['pos-cash_movements'] } }]"
+                    class="flex items-center !gap-2 text-inherit"
+                  >
+                    <i class="pi pi-inbox"></i>
+                    <span>{{ 'POS.CASH_MOVEMENTS.TITLE' | translate }}</span>
+                  </p-tab>
+                </p-tablist>
+              </p-tabs>
+            </article>
+            <article class="m-3">
+              <router-outlet name="pos-user_outlet"></router-outlet>
+            </article>
+          </section>
+        }
+        @case(false)
+        {
+          <section class="mt-10 w-full flex justify-center items-center">
+            <article class="pos_initial_card">
+              <div class="w-full p-10 flex flex-col gap-7 justify-center items-center">
+                <div class="w-full flex flex-col gap-1 justify-center items-center">
+                  <span class="flex justify-center items-center bg-[#24704D] text-[#FFFFFF] text-[2.7rem] font-light w-20 h-20 rounded-full">
+                    {{ authService.receiveSession().username.charAt(0).toUpperCase() }}
+                  </span>
+                  <small>{{ 'POS.CLOSED.USER_CASHIER' | translate }}</small>
+                </div>
+                <span class="w-full flex flex-col justify-center items-center">
+                  <h1>{{ 'POS.CLOSED.HELLO' | translate }}, {{ authService.receiveSession().username.toUpperCase() }}!</h1>
+                  <h5>{{ 'POS.CLOSED.GLAD_TO_SEE_YOU_BACK' | translate }}</h5>
+                  <h5>{{ 'POS.CLOSED.LETS_OPEN_CASH_REGISTER' | translate }}</h5>
+                </span>
+
+                <span class="pos_cash_closed">
+                  <h2>{{ 'POS.CLOSED.CASH_REGISTER_CLOSED' | translate }}</h2>
+                </span>
+
+                <div class="pos_initial_card">
+                  <p>{{ 'POS.CLOSED.CASH_REGISTER_NOT_OPENED' | translate }}</p>
+                  <p>{{ 'POS.CLOSED.TO_START_SALES' | translate }}</p>
+                </div>
+
+                <button pRipple class="btn-open" (click)="onDialogOpenCash()">
+                  {{ 'POS.CLOSED.OPEN_CASH_REGISTER_NOW' | translate }}
+                </button>
+              </div>
+            </article>
+          </section>
+        }
+      }
+    </main>
+  }
+}
+@else
+{
+  <p>Roles not found</p>
+}

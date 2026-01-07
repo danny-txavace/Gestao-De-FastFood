@@ -1,0 +1,17 @@
+<section class="flex gap-2 items-center justify-center">
+  @if (status == 2 )
+  {
+    <button pRipple type="button" class="pos_btn_only_icon">
+      <i class="pi pi-check"></i>
+    </button>
+  }
+  @else
+  {
+    <button pRipple type="button"
+      (click)="onPayNow()"
+      class="pos_pay_now_btn_icon"
+    >
+      <i class="pi pi-wallet"></i>
+    </button>
+  }
+</section>

@@ -1,0 +1,30 @@
+@if (authService.receiveSession().roles === 'admin')
+{
+  <main animate.enter="enter-animation"
+    class="w-full mb-[1rem] mt-0 flex flex-col gap-3"
+  >
+    <app-management-navbar></app-management-navbar>
+    <section class="mx-[1rem] max-[1035px]:mt-10">
+      <!--
+      <div class="breadCrumb">
+        @for (breadCrumb of breadCrumbItem; track breadCrumb.label; let last = $last)
+        {
+          <i class="pi {{ breadCrumb.icon }}"></i>
+          @if (!last) {
+            <a
+            (click)="goBackTo(breadCrumb.label)"
+            class="text-red-600 cursor-pointer hover:underline hover:text-[#4b4b4b]"
+            >
+              {{ breadCrumb.label }}
+            </a>
+          }
+          @if (last) { {{ breadCrumb.label }} }
+          @else { / }
+        }
+      </div>
+      -->
+      <app-management-outlet></app-management-outlet>
+    </section>
+    <app-management-footer></app-management-footer>
+  </main>
+}

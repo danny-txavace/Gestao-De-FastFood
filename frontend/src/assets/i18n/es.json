@@ -1,0 +1,518 @@
+{
+  "APP_NAME": "Tío Laice Gestión",
+  "LOADER": "Cargando datos",
+  "FOOTER": "© 2025, Tío Laice Gestión · Mantenido por Ramadan · Todos los derechos reservados.",
+  "NOT_FOUND": {
+    "TITLE": "¡Ups! Página no encontrada",
+    "MESSAGE": "La página que buscas puede haber sido eliminada o está temporalmente no disponible."
+  },
+  "LOGIN": {
+    "TITLE": "¡Bienvenido de nuevo!",
+    "SUBTITLE": "Por favor, introduce tus credenciales para acceder a tu cuenta.",
+    "USERNAME": "Nombre de usuario",
+    "PASSWORD": "Contraseña",
+    "SIGN_IN": "Iniciar sesión",
+    "TOOLTIP": {
+      "SHOW_PASSWORD": "Mostrar contraseña",
+      "HIDE_PASSWORD": "Ocultar contraseña"
+    },
+    "ERROR": {
+      "USERNAME": "Introduce tu nombre de usuario",
+      "PASSWORD": "Introduce tu contraseña"
+    }
+  },
+  "MANAGEMENT_NAVBAR": {
+    "DASHBOARD": "Panel Principal",
+    "POS": "PDV",
+    "POINT_OF_SALE": "Punto de Venta",
+    "CASH_REGISTER": "Caja",
+    "ORDERS_LIST": "Pedidos",
+    "ORDERS_LISTS": "Lista General de Pedidos",
+    "REPORT": "Informe",
+    "MENU": "Menú",
+    "INGREDIENTS": "Ingredientes",
+    "SYSTEM_USERS": "Usuarios",
+    "THEME": {
+      "TITLE": "Apariencia",
+      "DARK": "Modo Oscuro",
+      "LIGHT": "Modo Claro"
+    },
+    "LANGUAGE": {
+      "TITLE": "Idioma",
+      "ABBREVIATION": "ES",
+      "FULL_NAME": "Español",
+      "OPTIONS": {
+        "EN": "Inglés",
+        "ES": "Español",
+        "PT": "Portugués",
+        "ZH": "Chino"
+      }
+    },
+    "SIGN_OUT": "Cerrar sesión"
+  },
+  "DASHBOARD": {
+    "INFO_GREETING": "¡Bienvenido de nuevo, jefe! Hora de brillar.",
+    "INFO2_GREETING": "Convierte cada oportunidad en ganancia... 🔥"
+  },
+  "POS": {
+    "CLOSED": {
+      "SYSTEM_ADMINISTRATOR": "Administrador del Sistema",
+      "HELLO": "Hola",
+      "GLAD_TO_SEE_YOU_BACK": "¡Qué bueno verte de nuevo!",
+      "LETS_OPEN_CASH_REGISTER": "Vamos a abrir caja y arrancar el día con todo",
+      "CASH_REGISTER_CLOSED": "CAJA CERRADA",
+      "CASH_REGISTER_NOT_OPENED": "La caja del día aún no está abierta.",
+      "TO_START_SALES": "Para empezar a vender, haz clic en el botón de abajo.",
+      "OPEN_CASH_REGISTER_NOW": "ABRIR CAJA AHORA",
+      "USER_CASHIER": "Cajero/a",
+      "USER_CASH_REGISTER_OPEN": "Caja Abierta",
+      "USER_CASH_REGISTER_CLOSED": "Caja Cerrada",
+      "DATE_FORMAT_LONG": "EEEE, dd 'de' MMMM 'de' yyyy"
+    },
+    "NEW_ORDER": {
+      "TITLE": "Nuevo Pedido",
+      "TOTAL_QUANTITY": "Cant. Total",
+      "TOTAL_TO_PAY": "Total a Pagar",
+      "PAY_NOW": "Pagar Ahora",
+      "CANCEL": "Cancelar",
+      "PLACE_ORDER": "Realizar Pedido",
+      "ORDER_NUMBER": "PEDIDO Nº",
+      "NO_ITEMS_IN_CART": "No hay artículos en el carrito",
+      "QUANTITY": "Cantidad",
+      "AVAILABLE": "Disponible",
+      "UNAVAILABLE": "No disponible",
+      "ADD_TO_CART": "Añadir"
+    },
+    "ORDERS_LIST": {
+      "TITLE": "Lista de Pedidos"
+    },
+    "CASH_MOVEMENTS": {
+      "TITLE": "Movimientos de Caja",
+      "TODAY_SUMMARY": "Resumen de hoy:",
+      "INITIAL_BALANCE": "Saldo Inicial",
+      "TOTAL_INCOMES": "Total Entradas",
+      "TOTAL_EXPENSES": "Total Salidas",
+      "EXPECTED_TOTAL": "Total Esperado",
+      "CLOSE_CASH_REGISTER": "Cerrar Caja",
+      "CASH_REINFORCEMENT": "Refuerzo",
+      "CASH_WITHDRAWAL": "Retiro"
+    }
+  },
+  "INGREDIENTS": {
+    "TOTAL_ITEMS": "Artículos Activos",
+    "TOTAL_ACTIVE_QTY": "Cant. Disponible",
+    "TOTAL_INACTIVE_QTY": "Artículos Inactivos",
+    "NEAR_EXPIRY": "Próximo a Caducar",
+    "EXPIRED": "Caducado",
+    "ADD_NEW_INGREDIENT": "Nuevo Ingrediente"
+  },
+  "PRODUCTS": {
+    "ADD_NEW_ITEM": "Nuevo Artículo"
+  },
+  "CASH_REGISTER": {
+    "TODAY_SUMMARY": "Resumen de hoy:",
+    "INITIAL_BALANCE": "Saldo Inicial",
+    "TOTAL_INCOMES": "Total Entradas",
+    "TOTAL_EXPENSES": "Total Salidas",
+    "EXPECTED_TOTAL": "Total Esperado",
+    "OPEN_CASH_REGISTER": "Abrir Caja",
+    "CLOSE_CASH_REGISTER": "Cerrar Caja",
+    "CASH_REINFORCEMENT": "Refuerzo",
+    "CASH_WITHDRAWAL": "Retiro"
+  },
+  "REPORT": {
+    "YESTERDAY": "Ayer",
+    "TODAY": "Hoy",
+    "DATE_RANGE": "Seleccionar Período",
+    "OPENING_BALANCE": "Saldo Inicial",
+    "INFLOWS": "Facturación",
+    "OUTFLOWS": "Retiros",
+    "PAYMENT_METHODS": "Métodos de Pago",
+    "CLOSING_BALANCE": "Saldo Final",
+    "NUMBER_OF_SALES": "Nº de Ventas",
+    "EXPECTED_BALANCE": "Saldo Esperado",
+    "AVERAGE_TICKET": "Ticket Medio",
+    "SALES_PER_HOUR": "Rendimiento de Ventas",
+    "CASH_MOVEMENTS": "Movimientos de Caja",
+    "SALES_BREAKDOWN": "Desglose de Ventas",
+    "RECENT_SALES": "Ventas Recientes",
+    "LATEST_TRANSACTIONS": "últimas transacciones",
+    "NO_SALES": "No se encontraron ventas recientes",
+    "CASH": "Dinero"
+  },
+  "SYSTEM_USERS": {
+    "ADD_NEW_USER": "Nuevo Usuario"
+  },
+  "COMMON": {
+    "SEARCH": "Buscar",
+    "UNIT_OF_MEASURE": {
+      "UNIT": "Unidad",
+      "BOTTLE": "Botella",
+      "DOZEN": "Docena (dz)",
+      "GRAM": "Gramo (g)",
+      "KILOGRAM": "Kilogramo (kg)",
+      "MILLIGRAM": "Miligramo (mg)",
+      "MILLILITER": "Mililitro (ml)",
+      "LITER": "Litro (L)",
+      "OTHER": "Otro"
+    },
+    "CARD": {
+      "COMPARED_TO_YESTERDAY": "vs ayer",
+      "COMPARED_TO_DAY_BEFORE_YESTERDAY": "vs anteayer",
+      "COMPARED_TO_LAST_MONTH": "vs mes pasado",
+      "COMPARED_TO_LAST_WEEK": "vs semana pasada",
+      "COMPARED_TO_WEEK_BEFORE_LAST": "vs semana anterior",
+      "COMPARED_TO_MONTH_BEFORE_LAST": "vs mes anterior",
+      "COMPARED_TO_LAST": "vs anterior",
+      "LAST_UPDATED": "última actualización"
+    },
+    "TABLE": {
+      "NO_ROWS_TO_SHOWS": "No hay registros para mostrar...",
+      "SHOWING": "Mostrando",
+      "TO": "a",
+      "OF": "de",
+      "ENTRIES": "registros"
+    },
+    "CALENDAR": {
+      "TODAY": "Hoy",
+      "CLEAR": "Limpiar",
+      "DATE_FORMAT": "dd/mm/aa",
+      "WEEK_HEADER": "Sem",
+      "DAY_NAMES": {
+        "FULL": {
+          "SUNDAY": "Domingo",
+          "MONDAY": "Lunes",
+          "TUESDAY": "Martes",
+          "WEDNESDAY": "Miércoles",
+          "THURSDAY": "Jueves",
+          "FRIDAY": "Viernes",
+          "SATURDAY": "Sábado"
+        },
+        "SHORT": {
+          "SUNDAY": "Dom",
+          "MONDAY": "Lun",
+          "TUESDAY": "Mar",
+          "WEDNESDAY": "Mié",
+          "THURSDAY": "Jue",
+          "FRIDAY": "Vie",
+          "SATURDAY": "Sáb"
+        },
+        "MIN": {
+          "SUNDAY": "Do",
+          "MONDAY": "Lu",
+          "TUESDAY": "Ma",
+          "WEDNESDAY": "Mi",
+          "THURSDAY": "Ju",
+          "FRIDAY": "Vi",
+          "SATURDAY": "Sá"
+        }
+      },
+      "MONTH_NAMES": {
+        "FULL": {
+          "JANUARY": "Enero",
+          "FEBRUARY": "Febrero",
+          "MARCH": "Marzo",
+          "APRIL": "Abril",
+          "MAY": "Mayo",
+          "JUNE": "Junio",
+          "JULY": "Julio",
+          "AUGUST": "Agosto",
+          "SEPTEMBER": "Septiembre",
+          "OCTOBER": "Octubre",
+          "NOVEMBER": "Noviembre",
+          "DECEMBER": "Diciembre"
+        },
+        "SHORT": {
+          "JANUARY": "Ene",
+          "FEBRUARY": "Feb",
+          "MARCH": "Mar",
+          "APRIL": "Abr",
+          "MAY": "May",
+          "JUNE": "Jun",
+          "JULY": "Jul",
+          "AUGUST": "Ago",
+          "SEPTEMBER": "Sep",
+          "OCTOBER": "Oct",
+          "NOVEMBER": "Nov",
+          "DECEMBER": "Dic"
+        }
+      }
+    },
+    "CHART": {
+      "PROFIT_LOSS": "Ganancias y Pérdidas",
+      "REVENUE": "Facturación",
+      "EXPENSE": "Gastos",
+      "AREA": {
+        "REVENUE_EXPENSE": "Facturación × Gastos",
+        "FILE_NAME": "Facturacion-vs-Gastos",
+        "DOWNLOAD": "Descargar",
+        "RESET": "Limpiar"
+      }
+    }
+  },
+  "DIALOGS": {
+    "OPERATOR": "Operador",
+    "INSTRUCTION": "Rellena el formulario para cerrar la caja.",
+    "CLOSE_CASH_REGISTER": "Cierre de Caja",
+    "INITIAL_BALANCE": "Saldo Inicial",
+    "TOTAL_INCOMES": "Total Entradas",
+    "TOTAL_EXPENSES": "Total Salidas",
+    "EXPECTED_TOTAL": "Total Esperado",
+    "USER_SELECTION": "Seleccionar Usuario",
+    "CASH_AMOUNT": "Importe Contado",
+    "ACTIONS": {
+      "CANCEL": "Cancelar",
+      "CONFIRM": "Confirmar"
+    },
+    "CASH_ADJUSTMENTS": {
+      "REINFORCEMENT": {
+        "TITLE": "Refuerzo de Caja",
+        "INFO": "Añade dinero a la caja para asegurar cambio suficiente o saldo disponible.",
+        "AMOUNT": "Importe a Añadir",
+        "DESCRIPTION": {
+          "LABEL": "Descripción",
+          "PLACEHOLDER": "Opcional: explica el motivo del refuerzo"
+        }
+      },
+      "WITHDRAWAL": {
+        "TITLE": "Retiro de Caja",
+        "INFO": "Retira dinero de la caja por seguridad, depósito bancario o para cubrir gastos inmediatos.",
+        "AMOUNT": "Importe a Retirar",
+        "DESCRIPTION": {
+          "LABEL": "Descripción",
+          "PLACEHOLDER": "Opcional: explica el motivo del retiro"
+        }
+      }
+    },
+    "OPEN_CASH": {
+      "TITLE": "Abrir Caja",
+      "INFO": "Introduce el importe inicial para comenzar el turno.",
+      "AMOUNT": "Importe Inicial"
+    },
+    "DELETE": {
+      "TITLE": "Eliminar",
+      "INFO_0": "¿Estás seguro de que quieres eliminar este elemento?",
+      "INFO_1": "Esta acción es permanente y no se puede deshacer.",
+      "INFO_2": "Si estás seguro, haz clic en «Eliminar».",
+      "ACTIONS": {
+        "CANCEL": "Cancelar",
+        "CONFIRM": "Eliminar"
+      }
+    },
+    "INGREDIENTS": {
+      "TITLE": "INGREDIENTES",
+      "SELECT_INGREDIENT": "Selecciona un Ingrediente",
+      "ADD_NEW": {
+        "BTN": "Nuevo Ingrediente",
+        "TITLE": "Añadir Nuevo Ingrediente",
+        "INSTRUCTION": "Rellena el formulario para registrar un nuevo ingrediente."
+      },
+      "UPDATE": {
+        "TITLE": "Actualizar Ingrediente",
+        "INSTRUCTION": "Completa el formulario para actualizar los datos del ingrediente.",
+        "STATUS": {
+          "LABEL": "Estado",
+          "OPTIONS": {
+            "ACTIVE": "Activo",
+            "INACTIVE": "Inactivo"
+          }
+        }
+      },
+      "FIELDS": {
+        "ITEM_NAME": {
+          "LABEL": "Nombre del Artículo",
+          "REQUIRED": "El nombre es obligatorio"
+        },
+        "BATCH_NUMBER": "Número de Lote",
+        "PACKAGE_SIZE": "Tamaño",
+        "UNIT_OF_MEASURE": "Unidad",
+        "QUANTITY": "Cantidad",
+        "UNIT_COST_PRICE": "Precio de Compra",
+        "EXPIRATION_AT": "Fecha de Caducidad"
+      },
+      "ACTIONS": {
+        "CANCEL": "Cancelar",
+        "CONFIRM": "Guardar"
+      }
+    },
+    "CUSTOMER": {
+      "TITLE": "Añadir Nuevo Cliente",
+      "INFO": "Rellena los datos del cliente. Si no indicas nombre, lo llamaremos «CLIENTE FINAL».",
+      "FIELDS": {
+        "NAME": "Nombre Completo",
+        "PHONE": "Teléfono"
+      }
+    },
+    "PAYMENT": {
+      "TITLE": "PAGO",
+      "CUSTOMER": "CLIENTE FINAL",
+      "INFO": "Revisa el total y finaliza el pedido 😊",
+      "SELECT_METHOD": "Elige cómo quieres pagar",
+      "AMOUNT": "Importe a pagar",
+      "TOTAL": "Total",
+      "PAID": "Pagado",
+      "DUE": "Falta",
+      "CHANGE": "Cambio",
+      "FOOTER": "¡Transacción segura y protegida!"
+    },
+    "PRODUCTS": {
+      "ADD_NEW": {
+        "TITLE": "Añadir Nuevo Producto",
+        "INSTRUCTION": "Registra el nuevo artículo del menú."
+      },
+      "UPDATE": {
+        "TITLE": "Actualizar Producto",
+        "INSTRUCTION": "Actualiza la información del artículo del menú",
+        "STATUS": {
+          "LABEL": "Estado",
+          "OPTIONS": {
+            "ACTIVE": "Activo",
+            "INACTIVE": "Inactivo"
+          }
+        }
+      },
+      "FIELDS": {
+        "ITEM_NAME": {
+          "LABEL": "Nombre del Artículo",
+          "REQUIRED": "El nombre es obligatorio"
+        },
+        "PRICE": "Precio",
+        "CATEGORY": "Categoría"
+      },
+      "ACTIONS": {
+        "CANCEL": "Cancelar",
+        "CONFIRM": "Guardar"
+      }
+    },
+    "USERS": {
+      "ADD_NEW": {
+        "TITLE": "Añadir Nuevo Usuario",
+        "INSTRUCTION": "Completa el formulario para registrar un nuevo empleado.<br>La contraseña inicial será <strong>123456</strong>. ¡Debe cambiarla al primer inicio!"
+      },
+      "UPDATE": {
+        "TITLE": "Actualizar Usuario",
+        "INSTRUCTION": "Modifica lo necesario y guarda",
+        "STATUS": {
+          "LABEL": "Estado",
+          "OPTIONS": {
+            "ACTIVE": "Activo",
+            "INACTIVE": "Inactivo"
+          }
+        },
+        "NEW_PASSWORD": "Nueva Contraseña",
+        "NEW_PASSWORD_TOO_SHORT": "La nueva contraseña debe tener al menos 6 caracteres",
+        "CONFIRM_NEW_PASSWORD": "Confirmar Nueva Contraseña",
+        "CONFIRM_PASSWORD_TOO_SHORT": "La confirmación debe tener al menos 6 caracteres",
+        "PASSWORDS_DO_NOT_MATCH": "Las contraseñas no coinciden",
+        "ROLE": {
+          "LABEL": "Rol",
+          "OPTIONS": {
+            "ADMIN": "Gerente",
+            "USER": "Operador/a"
+          }
+        }
+      },
+      "FIELDS": {
+        "USERNAME": "Nombre de Usuario",
+        "REQUIRED": "El nombre de usuario es obligatorio",
+        "PHONE": "Teléfono"
+      },
+      "ACTIONS": {
+        "CANCEL": "Cancelar",
+        "CONFIRM": "Guardar"
+      }
+    }
+  },
+  "TABLE_HEADER": {
+    "ACTIONS": "Acciones",
+    "TOTAL": "Total",
+    "TOTALS": "Totales",
+    "OPERATOR": "Operador",
+    "ITEM_NAME": "Artículo",
+    "QTY": "Cant.",
+    "TOTAL_AMOUNT": "Total (MT)",
+    "PAID_AMOUNT": "Pagado (MT)",
+    "CHANGE": "Cambio (MT)",
+    "AMOUNT_MT": "Importe (MT)",
+    "DESCRIPTION": "Descripción",
+    "LAST_UPDATE": "Actualizado",
+    "CREATED_AT": "Creado",
+    "DATE_TIME": "Fecha y Hora",
+    "CUSTOMER_NAME": "Cliente",
+    "CUSTOMER_PHONE": "Teléfono",
+    "BATCH_NUMBER": "Lote Nº",
+    "PACKAGE_SIZE": "Tamaño",
+    "UNIT_OF_MEASURE": "Unidad",
+    "EXPIRATION_AT": "Caduca",
+    "UNIT_PRICE": "Precio Unit. (MT)",
+    "TOTAL_PRICE": "Total (MT)",
+    "IMAGE": "Imagen",
+    "PRICE": "Precio (MT)",
+    "CATEGORY": "Categoría",
+    "TOTAL_OPEN": "Total Apertura (MT)",
+    "TOTAL_CLOSED": "Total Cierre (MT)",
+    "OPENED_AT": "Abierto a las",
+    "CLOSED_AT": "Cerrado a las",
+    "USERNAME": "Usuario",
+    "ROLE": "Rol",
+    "TYPE": {
+      "TITLE": "Tipo",
+      "OPTIONS": {
+        "OPENED": "Apertura",
+        "CLOSED": "Cierre",
+        "REINFORCEMENT": "Refuerzo",
+        "WITHDRAWAL": "Retiro"
+      }
+    },
+    "STATUS": {
+      "TITLE": "Estado",
+      "OPTIONS": {
+        "CONFIRMED": "Confirmado",
+        "CANCELLED": "Cancelado",
+        "PENDING": "Pendiente",
+        "PAID": "Pagado",
+        "ACTIVE": "Activo",
+        "INACTIVE": "Inactivo",
+        "OPENED": "Abierto",
+        "CLOSED": "Cerrado"
+      }
+    },
+    "EXPIRY_STATUS": {
+      "TITLE": "Caducidad",
+      "OPTIONS": {
+        "VALID": "Válido",
+        "NEAR_EXPIRY": "Próximo a caducar",
+        "EXPIRED": "Caducado"
+      }
+    }
+  },
+  "ERRORS": {
+    "UNEXPECTED_ERROR": "Ocurrió un error inesperado. Inténtalo de nuevo.",
+    "REQUEST_FAILED": "Fallo de conexión. Inténtalo otra vez.",
+    "REQUIRED_FIELDS": "Rellena los campos obligatorios",
+    "HINT": "Selecciona quién está en caja ahora",
+    "IMAGE_READ_ERROR": "Error al leer la imagen",
+    "SELECT_VALID_IMAGE": "Por favor, selecciona una imagen válida",
+    "POS_LOAD_ERROR": "Error al cargar el PDV",
+    "SAVE_ERROR": "Error al guardar",
+    "CLEAR_ERROR": "Error al limpiar"
+  },
+  "SERVER_MESSAGES": {
+    "RECORD_SAVED_SUCCESS": "¡Registro guardado con éxito! 👍",
+    "RECORD_CREATED_SUCCESS": "¡Registro creado correctamente! 🎉",
+    "RECORD_UPDATED_SUCCESS": "¡Registro actualizado con éxito! ✅",
+    "RECORD_DELETED_SUCCESS": "¡Registro eliminado con éxito! 🗑️",
+    "RECORD_ALREADY_EXISTS": "¡Ups! Este registro ya existe.",
+    "RECORD_NOT_FOUND": "No se encontró el registro.",
+    "NO_CHANGES_DETECTED": "No se detectaron cambios.",
+    "CORRECT_HIGHLIGHTED_ERRORS": "Corrige los errores marcados e inténtalo de nuevo.",
+    "OPERATION_FAILED": "No se pudo completar la operación. Inténtalo otra vez.",
+    "CASH_REGISTER_OPENED": "¡Caja abierta! Ya puedes procesar ventas.",
+    "CASH_REGISTER_ALREADY_OPEN": "Ya tienes una caja abierta. Cierra la actual antes de abrir otra.",
+    "CASH_REGISTER_CLOSED": "Caja cerrada con éxito. ¡Gracias por tu turno!",
+    "UNEXPECTED_ERROR": "¡Ups! Ocurrió un error inesperado.",
+    "UNAUTHORISED_ACTION": "No tienes permiso para hacer esto.",
+    "ACCESS_FORBIDDEN": "Acceso prohibido a este recurso.",
+    "INSUFFICIENT_INGREDIENT": "No hay suficiente ingrediente para preparar este producto."
+  }
+}
